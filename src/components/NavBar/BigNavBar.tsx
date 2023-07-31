@@ -1,8 +1,8 @@
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import { ROUTES } from '../../constants/routes';
-import image from '../../constants/eLogo.png';
-import * as styles from './NavBar.styles';
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import { ROUTES } from "../../constants/routes";
+import image from "../../constants/xionDummyLogo.png";
+import * as styles from "./NavBar.styles";
 
 export interface IBigNavBarProps {
   handleNavItemClick: (pathname: string) => void;

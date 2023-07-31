@@ -35,7 +35,13 @@ export const Footer = () => {
             </Typography>
             <Typography
               sx={styles.footerLinks}
-              onClick={() => handleNavItemClick(ROUTES.GALLERY)}
+              onClick={() => handleNavItemClick(ROUTES.EVENTS_AND_CONCERTS)}
+            >
+              Events & Concerts
+            </Typography>
+            <Typography
+              sx={styles.footerLinks}
+              onClick={() => handleNavItemClick(ROUTES.EXPERIENCE)}
             >
               Gallery
             </Typography>
