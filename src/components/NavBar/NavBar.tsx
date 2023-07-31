@@ -1,10 +1,10 @@
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Container from '@mui/material/Container';
-import { ROUTES } from '../../constants/routes';
-import { useNavigate } from 'react-router';
-import { BigNavBar } from './BigNavBar';
-import { SmallNavBar } from './SmallNavBar';
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Container from "@mui/material/Container";
+import { ROUTES } from "../../constants/routes";
+import { useNavigate } from "react-router";
+import { BigNavBar } from "./BigNavBar";
+import { SmallNavBar } from "./SmallNavBar";
 
 export const NavBar = () => {
   const navigate = useNavigate();
@@ -15,15 +15,19 @@ export const NavBar = () => {
 
   const pages = [
     {
-      navText: 'About',
+      navText: "About",
       route: ROUTES.ABOUT,
     },
     {
-      navText: 'Gallery',
-      route: ROUTES.GALLERY,
+      navText: "Events & Concerts",
+      route: ROUTES.EVENTS_AND_CONCERTS,
     },
     {
-      navText: 'Contact',
+      navText: "Experience",
+      route: ROUTES.EXPERIENCE,
+    },
+    {
+      navText: "Contact",
       route: ROUTES.CONTACT,
     },
   ];
