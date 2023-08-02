@@ -23,7 +23,7 @@ export const NavBar = () => {
       route: ROUTES.EVENTS_AND_CONCERTS,
     },
     {
-      navText: "Experience",
+      navText: "Experience Us",
       route: ROUTES.EXPERIENCE,
     },
     {

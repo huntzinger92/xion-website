@@ -63,21 +63,17 @@ export const SmallNavBar = ({
       >
         <MenuItem
           onClick={() => onNavItemClick(ROUTES.HOME)}
-          sx={styles.navButtonHoverStyle}
+          sx={styles.navButtonContainer}
         >
-          <Typography sx={styles.navButtonHoverStyle} textAlign="center">
-            Home
-          </Typography>
+          <Typography sx={styles.navButtonText}>Home</Typography>
         </MenuItem>
         {pages.map(({ navText, route }) => (
           <MenuItem
             key={navText}
             onClick={() => onNavItemClick(route)}
-            sx={styles.navButtonHoverStyle}
+            sx={styles.navButtonContainer}
           >
-            <Typography sx={styles.navButtonHoverStyle} textAlign="center">
-              {navText}
-            </Typography>
+            <Typography sx={styles.navButtonText}>{navText}</Typography>
           </MenuItem>
         ))}
       </Menu>

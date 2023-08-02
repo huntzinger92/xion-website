@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 export const Experience = () => {
   return (
     <Box>
-      <Typography variant="h3">Experience</Typography>
+      <Typography variant="h3">Experience Us</Typography>
     </Box>
   );
 };

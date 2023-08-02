@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 export const Events = () => {
   return (
     <Box>
-      <Typography variant="h3">Events</Typography>
+      <Typography variant="h3">Events & Concerts</Typography>
     </Box>
   );
 };

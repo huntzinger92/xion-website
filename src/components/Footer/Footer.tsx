@@ -43,7 +43,7 @@ export const Footer = () => {
               sx={styles.footerLinks}
               onClick={() => handleNavItemClick(ROUTES.EXPERIENCE)}
             >
-              Gallery
+              Experience Us
             </Typography>
           </Box>
           <Typography
