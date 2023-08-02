@@ -1,15 +1,19 @@
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import { useState } from 'react';
-import * as styles from './Contact.styles';
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Fade from "@mui/material/Fade";
+import TextField from "@mui/material/TextField";
+import { useState } from "react";
+import * as styles from "./Contact.styles";
+import { ResponsiveAppContainer } from "../ResponsiveAppContainer/ResponsiveAppContainer";
+import { PageBanner } from "../PageBanner/PageBanner";
+import savorTheSoundVJ from "./savorTheSoundVJ.jpg";
+import { defaultPageFadeInTime } from "../../constants/fadeTimes";
 
 export const Contact = () => {
   const [contactFormData, setContactFormData] = useState({
-    title: '',
-    message: '',
-    email: '',
+    title: "",
+    message: "",
+    email: "",
   });
 
   const handleChange = (e: { target: { name: string; value: string } }) => {
@@ -23,53 +27,57 @@ export const Contact = () => {
   const disableSubmit = !email || !message || !title;
 
   return (
-    <Box>
-      <form name="contact" method="post">
-        <input type="hidden" name="form-name" value="contact" />
-        <Typography sx={styles.headerStyle} variant="h3">
-          Contact
-        </Typography>
-        <Box sx={styles.formContainer}>
-          <TextField
-            type="text"
-            placeholder="Your Email"
-            name="email"
-            value={email}
-            onChange={handleChange}
-            label="Return Email"
-            required
-          />
-          <TextField
-            type="text"
-            placeholder="Subject"
-            name="title"
-            value={title}
-            onChange={handleChange}
-            label="Title"
-            required
-          />
-          <TextField
-            name="message"
-            placeholder="Your message here..."
-            value={message}
-            onChange={handleChange}
-            multiline
-            rows={5}
-            required
-            label="Message"
-          />
-        </Box>
-        <Box sx={styles.buttonContainer}>
-          <Button
-            type="submit"
-            value="Submit"
-            disabled={disableSubmit}
-            variant="contained"
-          >
-            Submit
-          </Button>
-        </Box>
-      </form>
-    </Box>
+    <Fade in timeout={defaultPageFadeInTime}>
+      <Box>
+        <PageBanner image={savorTheSoundVJ} headerText="Contact Us" />
+        <ResponsiveAppContainer>
+          <Box>
+            <form name="contact" method="post">
+              <input type="hidden" name="form-name" value="contact" />
+              <Box sx={styles.formContainer}>
+                <TextField
+                  type="text"
+                  placeholder="Your Email"
+                  name="email"
+                  value={email}
+                  onChange={handleChange}
+                  label="Return Email"
+                  required
+                />
+                <TextField
+                  type="text"
+                  placeholder="Subject"
+                  name="title"
+                  value={title}
+                  onChange={handleChange}
+                  label="Title"
+                  required
+                />
+                <TextField
+                  name="message"
+                  placeholder="Your message here..."
+                  value={message}
+                  onChange={handleChange}
+                  multiline
+                  rows={5}
+                  required
+                  label="Message"
+                />
+              </Box>
+              <Box sx={styles.buttonContainer}>
+                <Button
+                  type="submit"
+                  value="Submit"
+                  disabled={disableSubmit}
+                  variant="contained"
+                >
+                  Submit
+                </Button>
+              </Box>
+            </form>
+          </Box>
+        </ResponsiveAppContainer>
+      </Box>
+    </Fade>
   );
 };

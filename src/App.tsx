@@ -7,7 +7,6 @@ import { Home } from "./components/Home/Home";
 import { About } from "./components/About/About";
 import { Events } from "./components/Events/Events";
 import { Contact } from "./components/Contact/Contact";
-import { ResponsiveAppContainer } from "./components/ResponsiveAppContainer/ResponsiveAppContainer";
 import { Footer } from "./components/Footer/Footer";
 import { Experience } from "./components/Experience/Experience";
 
@@ -15,18 +14,16 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <NavBar />
-      <ResponsiveAppContainer>
-        {/* make all pages have a bottom margin of 25px before footer */}
-        <Box sx={{ marginBottom: "25px" }}>
-          <Routes>
-            <Route path={ROUTES.HOME} element={<Home />} />
-            <Route path={ROUTES.ABOUT} element={<About />} />
-            <Route path={ROUTES.EVENTS_AND_CONCERTS} element={<Events />} />
-            <Route path={ROUTES.EXPERIENCE} element={<Experience />} />
-            <Route path={ROUTES.CONTACT} element={<Contact />} />
-          </Routes>
-        </Box>
-      </ResponsiveAppContainer>
+      {/* make all pages have a bottom margin of 25px before footer */}
+      <Box sx={{ marginBottom: "25px", minHeight: "70vh" }}>
+        <Routes>
+          <Route path={ROUTES.HOME} element={<Home />} />
+          <Route path={ROUTES.ABOUT} element={<About />} />
+          <Route path={ROUTES.EVENTS_AND_CONCERTS} element={<Events />} />
+          <Route path={ROUTES.EXPERIENCE} element={<Experience />} />
+          <Route path={ROUTES.CONTACT} element={<Contact />} />
+        </Routes>
+      </Box>
       <Footer />
     </ThemeProvider>
   );

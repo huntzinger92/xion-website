@@ -3,43 +3,41 @@ import Button from "@mui/material/Button";
 import { ROUTES } from "../../constants/routes";
 import image from "../../constants/xionDummyLogo.png";
 import * as styles from "./NavBar.styles";
+import { Typography } from "@mui/material";
 
 export interface IBigNavBarProps {
   handleNavItemClick: (pathname: string) => void;
-  pages: { navText: string; route: string }[];
+  pages: { navText: string | JSX.Element; route: string }[];
 }
 
 export const BigNavBar = ({ handleNavItemClick, pages }: IBigNavBarProps) => {
+  const middleArrayIndex = Math.ceil(pages.length / 2);
+  const pagesWithLogoInMiddle = [
+    ...pages.slice(0, middleArrayIndex),
+    {
+      navText: (
+        <Typography component="span" sx={styles.bigLogoWrapper}>
+          <img style={styles.bigLogo} src={image} />
+        </Typography>
+      ),
+      route: ROUTES.HOME,
+    },
+    ...pages.slice(middleArrayIndex),
+  ];
   return (
     <Box sx={styles.bigNavBarContainer}>
-      <Box sx={styles.mediumLogoContainer}>
+      {pagesWithLogoInMiddle.map(({ navText, route }) => (
         <Button
-          onClick={() => handleNavItemClick(ROUTES.HOME)}
-          sx={{
-            ...styles.mediumAppBarButtons,
-            paddingTop: 0,
-            paddingBottom: 0,
-          }}
+          key={route}
+          onClick={() => handleNavItemClick(route)}
+          sx={styles.mediumAppBarButtons}
           variant="contained"
         >
-          <img style={styles.bigLogo} src={image} />
-        </Button>
-      </Box>
-      <Box
-        sx={styles.mediumNavBarButtonsContainer}
-        data-testid="full-nav-links"
-      >
-        {pages.map(({ navText, route }) => (
-          <Button
-            key={navText}
-            onClick={() => handleNavItemClick(route)}
-            sx={styles.mediumAppBarButtons}
-            variant="contained"
-          >
+          <Typography sx={styles.bigNavBarButtonTextWrapper}>
             {navText}
-          </Button>
-        ))}
-      </Box>
+          </Typography>
+        </Button>
+      ))}
     </Box>
   );
 };

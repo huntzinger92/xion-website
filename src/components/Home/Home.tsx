@@ -1,33 +1,27 @@
 import Box from "@mui/material/Box";
+import Fade from "@mui/material/Fade";
 import Typography from "@mui/material/Typography";
-import { useState } from "react";
 import { homeParagraphs } from "./Home.text";
 import * as styles from "./Home.styles";
-import companyImage from "./companyPhoto.jpg";
+import { Slideshow } from "./Slideshow";
+import { ResponsiveAppContainer } from "../ResponsiveAppContainer/ResponsiveAppContainer";
+import { defaultPageFadeInTime } from "../../constants/fadeTimes";
 
 export const Home = () => {
-  const [imgLoaded, setImgLoaded] = useState(false);
-
-  const handleImgLoad = () => {
-    setImgLoaded(true);
-  };
-
   return (
-    <div>
-      <Typography variant="h3">Xion Sound Waves</Typography>
-      <Box sx={styles.imageContainer}>
-        {!imgLoaded && <Box sx={styles.imagePlaceholder} />}
-        <img
-          src={companyImage}
-          onLoad={handleImgLoad}
-          style={{ ...styles.image, display: imgLoaded ? "normal" : "hidden" }}
-        />
+    <Fade in timeout={defaultPageFadeInTime}>
+      <Box>
+        <Slideshow />
+        <ResponsiveAppContainer>
+          <Box>
+            {homeParagraphs.map((paragraph) => (
+              <Typography key={paragraph} sx={styles.paragraphMargin}>
+                {paragraph}
+              </Typography>
+            ))}
+          </Box>
+        </ResponsiveAppContainer>
       </Box>
-      {homeParagraphs.map((paragraph) => (
-        <Typography key={paragraph} sx={styles.paragraphMargin}>
-          {paragraph}
-        </Typography>
-      ))}
-    </div>
+    </Fade>
   );
 };

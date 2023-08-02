@@ -1,23 +1,23 @@
 import {
   contrastingTextColor,
-  thematicBlue,
-} from '../../constants/globalStyles';
+  darkBackgroundColor,
+} from "../../constants/globalStyles";
 
 export const footerContainer = {
-  width: '100%',
-  marginTop: 'auto',
-  backgroundColor: thematicBlue,
+  width: "100%",
+  marginTop: "auto",
+  backgroundColor: darkBackgroundColor,
   color: contrastingTextColor,
-  paddingTop: '25px',
-  paddingBottom: '25px',
+  paddingTop: "25px",
+  paddingBottom: "25px",
 };
 
 export const footerContentWrapper = {
-  display: 'grid',
-  gridTemplateColumns: '1fr 1fr 1fr',
-  gap: '15px',
-  alignItems: 'center',
-  justifyContent: 'center',
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr 1fr",
+  gap: "15px",
+  alignItems: "center",
+  justifyContent: "center",
 };
 
 export const footerText = {
@@ -26,22 +26,22 @@ export const footerText = {
 
 export const footerLinks = {
   ...footerText,
-  textDecoration: 'underline',
-  textDecorationColor: 'transparent',
-  transition: 'all .1s ease-in',
-  cursor: 'pointer',
-  ':hover': {
-    textDecorationColor: 'white',
+  textDecoration: "underline",
+  textDecorationColor: "transparent",
+  transition: "all .1s ease-in",
+  cursor: "pointer",
+  ":hover": {
+    textDecorationColor: "white",
   },
 };
 
 export const contactLink = {
   ...footerLinks,
-  textWrap: 'nowrap',
+  textWrap: "nowrap",
 };
 
 export const linksContainer = {
-  display: 'flex',
-  flexDirection: 'column',
-  textAlign: 'center',
+  display: "flex",
+  flexDirection: "column",
+  textAlign: "center",
 };

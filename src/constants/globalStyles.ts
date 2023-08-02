@@ -1,31 +1,33 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
-export const backgroundColor = '#f0f0f0';
+export const backgroundColor = "#f0f0f0";
 
-export const slightlyDarkerBackgroundColor = '#ebebed';
+export const slightlyDarkerBackgroundColor = "#ebebed";
 
-export const contrastingBackgroundColor = '#ffffff';
+export const contrastingBackgroundColor = "#ffffff";
 
-export const defaultTextColor = '#212121';
+export const defaultTextColor = "#212121";
 
 // navbar button text
-export const contrastingTextColor = 'white';
+export const contrastingTextColor = "white";
 
-export const disabledButtonTextColor = 'gray';
+export const disabledButtonTextColor = "gray";
 
-export const thematicBlue = '#00667A';
+export const darkBackgroundColor = "#242424";
 
-export const thematicBlueBackgroundColor = '#5268f7';
+export const thematicColor = "#420734";
+
+export const defaultPageTextStyle = { fontSize: "1.5vw", marginBottom: "20px" };
 
 export const theme = createTheme({
   components: {
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: thematicBlue,
+          backgroundColor: darkBackgroundColor,
           color: contrastingTextColor,
           // enabled outlined textfield border
-          '&:hover:not($disabled):not($focused):not($error) $notchedOutline':
+          "&:hover:not($disabled):not($focused):not($error) $notchedOutline":
             {},
         },
       },
@@ -34,21 +36,17 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor,
-          fontSize: '15px',
-          ':hover': {
-            color: thematicBlue,
-          },
-          transition: 'color .4s ease',
+          fontSize: "15px",
         },
         label: {
-          cursor: 'pointer',
+          cursor: "pointer",
         },
       },
     },
     MuiContainer: {
       styleOverrides: {
         root: {
-          paddingLeft: '0px',
+          paddingLeft: "0px",
         },
       },
     },
@@ -77,10 +75,10 @@ export const theme = createTheme({
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
-          '&:hover .MuiOutlinedInput-notchedOutline': {},
+          "&:hover .MuiOutlinedInput-notchedOutline": {},
         },
         input: {
-          '&:-webkit-autofill': {
+          "&:-webkit-autofill": {
             WebkitBoxShadow: `0 0 0 100px ${backgroundColor} inset`,
           },
         },
@@ -103,21 +101,21 @@ export const theme = createTheme({
   },
   palette: {
     primary: {
-      main: thematicBlue,
+      main: thematicColor,
     },
   },
   typography: {
     button: {
-      textTransform: 'none',
+      textTransform: "none",
     },
     allVariants: {
       color: defaultTextColor,
     },
     h3: {
-      color: thematicBlue,
-      textAlign: 'center',
-      marginTop: '20px',
-      marginBottom: '15px',
+      color: defaultTextColor,
+      textAlign: "center",
+      marginTop: "20px",
+      marginBottom: "15px",
     },
   },
 });
