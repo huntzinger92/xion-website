@@ -13,13 +13,11 @@ export const contrastingTextColor = "white";
 
 export const disabledButtonTextColor = "gray";
 
-export const thematicBlue = "#00667A";
-
-export const thematicBlueBackgroundColor = "#5268f7";
-
 export const darkBackgroundColor = "#242424";
 
 export const thematicColor = "#420734";
+
+export const defaultPageTextStyle = { fontSize: "1.5vw", marginBottom: "20px" };
 
 export const theme = createTheme({
   components: {
@@ -39,10 +37,6 @@ export const theme = createTheme({
         root: {
           backgroundColor,
           fontSize: "15px",
-          ":hover": {
-            color: thematicBlue,
-          },
-          transition: "color .4s ease",
         },
         label: {
           cursor: "pointer",
@@ -107,7 +101,7 @@ export const theme = createTheme({
   },
   palette: {
     primary: {
-      main: thematicBlue,
+      main: thematicColor,
     },
   },
   typography: {

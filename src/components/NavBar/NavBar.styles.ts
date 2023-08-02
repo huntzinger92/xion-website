@@ -12,8 +12,14 @@ export const mediumNavBarButtonsContainer = {
 
 export const navButtonContainer: SxProps = {
   backgroundColor: darkBackgroundColor,
+  textDecoration: "underline",
+  textDecorationColor: "transparent",
+  transition: "text-decoration-color .4s ease",
   "&:hover": {
     backgroundColor: darkBackgroundColor,
+    textDecoration: "underline",
+    textDecorationColor: contrastingTextColor,
+    boxShadow: "none",
   },
 };
 
@@ -21,14 +27,10 @@ export const navButtonText: SxProps = {
   backgroundColor: darkBackgroundColor,
   color: contrastingTextColor,
   transition: "all .4s ease",
-  textDecoration: "underline",
-  textDecorationColor: "transparent",
+  textDecoration: "inherit",
   width: "100%",
   height: "100%",
   textAlign: "left",
-  "&:hover": {
-    textDecorationColor: contrastingTextColor,
-  },
 };
 
 export const mediumAppBarButtons = {
@@ -43,8 +45,12 @@ export const mediumAppBarButtons = {
   boxShadow: "none",
   textDecoration: "underline",
   textDecorationColor: "transparent",
+  transition: "text-decoration-color .4s ease",
   "&:hover": {
     backgroundColor: darkBackgroundColor,
+    textDecoration: "underline",
+    textDecorationColor: contrastingTextColor,
+    boxShadow: "none",
   },
 };
 
@@ -67,9 +73,6 @@ export const smallLogoStyle = {
   color: "inherit",
   textDecoration: "none",
   width: "fit-content",
-  "&:hover": {
-    // color: thematicBlue,
-  },
 };
 
 export const smallLogoContainer = {

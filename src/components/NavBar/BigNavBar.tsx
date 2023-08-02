@@ -16,7 +16,7 @@ export const BigNavBar = ({ handleNavItemClick, pages }: IBigNavBarProps) => {
     ...pages.slice(0, middleArrayIndex),
     {
       navText: (
-        <Typography sx={styles.bigLogoWrapper}>
+        <Typography component="span" sx={styles.bigLogoWrapper}>
           <img style={styles.bigLogo} src={image} />
         </Typography>
       ),

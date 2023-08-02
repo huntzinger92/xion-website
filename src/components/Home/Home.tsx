@@ -1,22 +1,27 @@
+import Box from "@mui/material/Box";
+import Fade from "@mui/material/Fade";
 import Typography from "@mui/material/Typography";
 import { homeParagraphs } from "./Home.text";
 import * as styles from "./Home.styles";
+import { Slideshow } from "./Slideshow";
+import { ResponsiveAppContainer } from "../ResponsiveAppContainer/ResponsiveAppContainer";
+import { defaultPageFadeInTime } from "../../constants/fadeTimes";
 
 export const Home = () => {
   return (
-    <div style={{ overflow: "hidden" }}>
-      <Typography
-        variant="h2"
-        textAlign={"center"}
-        sx={{ marginTop: "20px", marginBottom: "50px" }}
-      >
-        Xion Sound Waves
-      </Typography>
-      {homeParagraphs.map((paragraph) => (
-        <Typography key={paragraph} sx={styles.paragraphMargin}>
-          {paragraph}
-        </Typography>
-      ))}
-    </div>
+    <Fade in timeout={defaultPageFadeInTime}>
+      <Box>
+        <Slideshow />
+        <ResponsiveAppContainer>
+          <Box>
+            {homeParagraphs.map((paragraph) => (
+              <Typography key={paragraph} sx={styles.paragraphMargin}>
+                {paragraph}
+              </Typography>
+            ))}
+          </Box>
+        </ResponsiveAppContainer>
+      </Box>
+    </Fade>
   );
 };
