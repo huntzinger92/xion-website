@@ -17,7 +17,10 @@ export const darkBackgroundColor = "#242424";
 
 export const thematicColor = "#420734";
 
-export const defaultPageTextStyle = { fontSize: "1.5vw", marginBottom: "20px" };
+export const defaultPageTextStyle = {
+  fontSize: "1.5rem",
+  marginBottom: "20px",
+};
 
 export const theme = createTheme({
   components: {

@@ -20,12 +20,20 @@ export const slideshowContainer = {
   marginBottom: "25px",
 };
 
-export const slideshowImage = { width: "100%", opacity: 0.45 };
+export const nonMobileSlideshowImage = { width: "100%", opacity: 0.45 };
+
+export const mobileSlideshowImage = {
+  ...nonMobileSlideshowImage,
+  height: "100vh",
+  width: "auto",
+  marginLeft: "50%",
+  transform: "translateX(-50%)",
+};
 
 export const homepageHeader = {
   position: "absolute",
   width: "100%",
-  fontSize: "8vw",
+  // fontSize: "8vw",
   left: 0,
   textAlign: "center",
   zIndex: 2,
