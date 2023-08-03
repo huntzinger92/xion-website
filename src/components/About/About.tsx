@@ -16,32 +16,27 @@ export const About = () => {
           <ResponsiveAppContainer>
             <Box>
               <Typography sx={defaultPageTextStyle}>
-                A long form story about Xion, with some photos, maybe a bio of
-                VJ, specifically. Some extra text content to fill space for now
-                -
+                Founded in 2020, Xion Sound Waves is a soulful and uplifting new
+                age choir known for delivering musical experiences unlike any
+                other.
               </Typography>
               <Typography sx={defaultPageTextStyle}>
-                Trey McLaughlin & the Sounds Of Zamar has undoubtedly made a
-                name for themselves in the music industry by performing with
-                gospel greats like William McDowell, Kierra “Kiki” Sheard, Brian
-                Courtney Wilson, and James Fortune. Trey McLaughlin and the
-                Sounds of Zamar is fresh off a competition win for their
-                rendition of “Chasing After You,” which afforded them a feature
-                on GRAMMY® award-nominated artist Vashawn Mitchell’s
-                “Triumphant“ (Deluxe Edition) DVD.
+                Led by founder and director VJ Herbert, Xion’s sound blends
+                complex harmonies, positive affirmations, and playful melodies
+                designed to reconnect listeners to the divinity within each of
+                us.
               </Typography>
               <Typography sx={defaultPageTextStyle}>
-                Established in 2016, Tonality is an award-winning ensemble known
-                for “open hearted singing” (Lauri’s List). Tonality’s most
-                recent award is the 2020 Chorus America/ASCAP Award for
-                Adventurous Programming, a prize given for commitment to singing
-                and commissioning new works.
+                Xion’s talents have been showcased widely, including the
+                Heartland Pagan Festival, Savor the Sound (an immersive event
+                that combines a coursed meal by a Michelin-star chef with music
+                inspired by the cuisine), multiple collaborations with artist
+                Calvin Arsenia, and more.
               </Typography>
               <Typography sx={defaultPageTextStyle}>
-                Tonality is led by founder and Artistic Director Alexander Lloyd
-                Blake. Blake imagined Tonality as an ensemble that represents
-                the diverse cultures and ethnicities within the Los Angeles
-                area.
+                Whether headlining concerts or powerfully holding meditative
+                space, Xion’s unique approach leaves audiences touched by love,
+                light, and healing.
               </Typography>
             </Box>
           </ResponsiveAppContainer>
