@@ -8,6 +8,7 @@ import choirPhoto from "./choirPhoto.jpg";
 import savorTheSoundGroup from "./savorTheSoundGroup.jpg";
 import savorTheSoundVJ from "./savorTheSoundVJ.jpg";
 import * as styles from "./Home.styles";
+import { ImageLoader } from "../ImageLoader/ImageLoader";
 
 // array of all homepage images in slideshow, shuffled so a random one starts on page refresh
 const homepageImages = [choirPhoto, savorTheSoundGroup, savorTheSoundVJ].sort(
@@ -31,7 +32,7 @@ export const Slideshow = () => {
   } else {
     // mobile case
     homepageBannerHeight = "100vh";
-    headerTopLocation = "40vh";
+    headerTopLocation = "32vh";
     imageStyle = styles.mobileSlideshowImage;
   }
   return (
@@ -39,7 +40,7 @@ export const Slideshow = () => {
       <FadeSlideshow autoplay arrows={false} duration={10000}>
         {homepageImages.map((homepageImage) => (
           <div key={homepageImage}>
-            <img style={imageStyle} src={homepageImage} />
+            <ImageLoader style={imageStyle} src={homepageImage} />
           </div>
         ))}
       </FadeSlideshow>

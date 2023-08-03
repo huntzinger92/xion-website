@@ -33,7 +33,7 @@ export const mobileSlideshowImage = {
 export const homepageHeader = {
   position: "absolute",
   width: "100%",
-  // fontSize: "8vw",
+  fontWeight: "bold",
   left: 0,
   textAlign: "center",
   zIndex: 2,

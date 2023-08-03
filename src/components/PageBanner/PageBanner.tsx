@@ -2,6 +2,7 @@ import { useMediaQuery, useTheme } from "@mui/material";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import * as styles from "./PageBanner.styles";
+import { ImageLoader } from "../ImageLoader/ImageLoader";
 
 export const PageBanner = ({
   image,
@@ -28,8 +29,14 @@ export const PageBanner = ({
     headerTopLocation = "50px";
   }
   return (
-    <Box sx={{ ...styles.pageBannerContainer, height: bannerHeight }}>
-      <img
+    <Box
+      sx={{
+        ...styles.pageBannerContainer,
+        height: bannerHeight,
+        minHeight: aboveSmallScreen ? "200px" : "unset",
+      }}
+    >
+      <ImageLoader
         src={image}
         style={{
           ...styles.bannerImage,

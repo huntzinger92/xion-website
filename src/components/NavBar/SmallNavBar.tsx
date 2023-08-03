@@ -5,9 +5,11 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { SocialIcon } from "react-social-icons";
 import { ROUTES } from "../../constants/routes";
 import image from "../../constants/xionDummyLogo.png";
 import * as styles from "./NavBar.styles";
+import { socialMediaLinks } from "../../constants/socialMediaLinks";
 
 export interface ISmallNavBarProps {
   handleNavItemClick: (pathname: string) => void;
@@ -41,6 +43,7 @@ export const SmallNavBar = ({
         aria-haspopup="true"
         onClick={handleOpenNavMenu}
         color="inherit"
+        sx={styles.hamburgerMenu}
       >
         <MenuIcon />
       </IconButton>
@@ -79,10 +82,26 @@ export const SmallNavBar = ({
       </Menu>
 
       <Box sx={styles.smallLogoContainer}>
-        <img
-          src={image}
-          style={styles.smallLogo}
-          onClick={() => onNavItemClick(ROUTES.HOME)}
+        <Box sx={styles.smallLogoInner}>
+          <img
+            src={image}
+            style={styles.smallLogo}
+            onClick={() => onNavItemClick(ROUTES.HOME)}
+          />
+        </Box>
+      </Box>
+      <Box sx={styles.socialIconsContainer}>
+        <SocialIcon
+          {...styles.socialIconsProps}
+          url={socialMediaLinks.instagram}
+        />
+        <SocialIcon
+          {...styles.socialIconsProps}
+          url={socialMediaLinks.facebook}
+        />
+        <SocialIcon
+          {...styles.socialIconsProps}
+          url={socialMediaLinks.youtube}
         />
       </Box>
     </Box>

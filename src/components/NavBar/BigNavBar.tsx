@@ -4,6 +4,9 @@ import { ROUTES } from "../../constants/routes";
 import image from "../../constants/xionDummyLogo.png";
 import * as styles from "./NavBar.styles";
 import { Typography } from "@mui/material";
+import { SocialIcon } from "react-social-icons";
+import { ImageLoader } from "../ImageLoader/ImageLoader";
+import { socialMediaLinks } from "../../constants/socialMediaLinks";
 
 export interface IBigNavBarProps {
   handleNavItemClick: (pathname: string) => void;
@@ -17,7 +20,7 @@ export const BigNavBar = ({ handleNavItemClick, pages }: IBigNavBarProps) => {
     {
       navText: (
         <Typography component="span" sx={styles.bigLogoWrapper}>
-          <img style={styles.bigLogo} src={image} />
+          <ImageLoader style={styles.bigLogo} src={image} />
         </Typography>
       ),
       route: ROUTES.HOME,
@@ -38,6 +41,20 @@ export const BigNavBar = ({ handleNavItemClick, pages }: IBigNavBarProps) => {
           </Typography>
         </Button>
       ))}
+      <Box sx={styles.bigSocialIconsContainer}>
+        <SocialIcon
+          {...styles.socialIconsProps}
+          url={socialMediaLinks.instagram}
+        />
+        <SocialIcon
+          {...styles.socialIconsProps}
+          url={socialMediaLinks.facebook}
+        />
+        <SocialIcon
+          {...styles.socialIconsProps}
+          url={socialMediaLinks.youtube}
+        />
+      </Box>
     </Box>
   );
 };

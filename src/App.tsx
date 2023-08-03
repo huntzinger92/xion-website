@@ -9,6 +9,7 @@ import { Events } from "./components/Events/Events";
 import { Contact } from "./components/Contact/Contact";
 import { Footer } from "./components/Footer/Footer";
 import { Experience } from "./components/Experience/Experience";
+import { NotFound } from "./components/NotFound/NotFound";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path={ROUTES.EVENTS_AND_CONCERTS} element={<Events />} />
           <Route path={ROUTES.EXPERIENCE} element={<Experience />} />
           <Route path={ROUTES.CONTACT} element={<Contact />} />
+          <Route path={"/*"} element={<NotFound />} />
         </Routes>
       </Box>
       <Footer />

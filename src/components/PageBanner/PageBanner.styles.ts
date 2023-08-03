@@ -13,7 +13,6 @@ export const bannerHeader = {
   textAlign: "center",
   zIndex: 2,
   letterSpacing: ".045em",
-  marginLeft: "10px",
-  marginRight: "10px",
   marginBottom: "5px",
+  fontWeight: "bold",
 };

@@ -56,8 +56,8 @@ export const mediumAppBarButtons = {
 
 export const smallNavContentStyle = {
   flexGrow: 1,
-  display: { xs: "flex", md: "none" },
-  justifyContent: "space-between",
+  display: { xs: "grid", md: "none" },
+  gridTemplateColumns: "1fr 1fr 1fr",
 };
 
 export const smallNavMenuStyle = {
@@ -76,10 +76,12 @@ export const smallLogoStyle = {
 };
 
 export const smallLogoContainer = {
-  width: "50%",
-  display: "flex",
+  justifySelf: "center",
   alignItems: "center",
+  display: "flex",
 };
+
+export const smallLogoInner = { display: { xs: "none", sm: "flex" } };
 
 export const socialLinksContainer = {
   marginLeft: "auto",
@@ -132,6 +134,13 @@ export const smallLogo = {
   cursor: "pointer",
   color: contrastingTextColor,
   filter: "invert(1)",
+  marginRight: "5px",
+};
+
+export const socialIconsProps = {
+  bgColor: darkBackgroundColor,
+  fgColor: contrastingTextColor,
+  target: "_blank",
 };
 
 export const bigNavBarButtonTextWrapper = {
@@ -140,4 +149,14 @@ export const bigNavBarButtonTextWrapper = {
   textDecorationColor: "transparent",
   transition: "all .4s ease-in",
   ":hover": { textDecorationColor: contrastingTextColor },
+};
+
+export const hamburgerMenu = { justifySelf: "start" };
+
+export const socialIconsContainer = { justifySelf: "end", minWidth: "150px" };
+
+export const bigSocialIconsContainer = {
+  display: "flex",
+  position: "absolute",
+  right: "-10px",
 };
