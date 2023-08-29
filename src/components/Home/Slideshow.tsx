@@ -2,9 +2,9 @@ import { useMediaQuery, useTheme } from "@mui/material";
 import "react-slideshow-image/dist/styles.css";
 import Box from "@mui/material/Box";
 import Fade from "@mui/material/Fade";
+import Typography from "@mui/material/Typography";
 import { Fade as FadeSlideshow } from "react-slideshow-image";
 import choirPhoto from "./choirPhoto.jpg";
-import xionNameHeader from "./xionNameHeader.png";
 import xionSilhouette from "./xionSilhouette.jpeg";
 import * as styles from "./Home.styles";
 import { ImageLoader } from "../ImageLoader/ImageLoader";
@@ -29,9 +29,14 @@ export const Slideshow = () => {
         ))}
       </FadeSlideshow>
       <Fade in timeout={3500}>
-        <Box>
-          <ImageLoader style={styles.homepageHeader} src={xionNameHeader} />
+        <Box sx={styles.homepageHeader}>
+          <Typography variant={aboveSmallScreen ? "h1" : "h2"}>
+            Xion Sound Waves
+          </Typography>
         </Box>
+        {/* <Box>
+          <ImageLoader style={styles.homepageHeader} src={xionNameHeader} />
+        </Box> */}
       </Fade>
     </Box>
   );

@@ -19,7 +19,7 @@ export const Home = () => {
               Pagan Festival in 2022
             </Typography>
             <ReactPlayer
-              style={{ margin: "auto" }}
+              style={{ margin: "auto", maxWidth: "90%" }}
               url="https://www.youtube.com/watch?v=etFixhawgTM"
             />
           </Box>
