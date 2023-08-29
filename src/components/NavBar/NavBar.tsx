@@ -32,8 +32,11 @@ export const NavBar = () => {
     },
   ];
 
+  // there is a compability bug between MUI AppBar and position="sticky" and react-slideshow-images <Slideshow />
+  // if both are used, browser scrolls to bottom of page on load
+  // we cheat this bug by setting position to static and manually setting the AppBar position to sticky
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ position: "sticky" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <BigNavBar handleNavItemClick={handleNavItemClick} pages={pages} />

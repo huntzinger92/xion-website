@@ -22,6 +22,7 @@ export const footerContentWrapper = {
 
 export const footerText = {
   color: contrastingTextColor,
+  textAlign: "center",
 };
 
 export const footerLinks = {
@@ -38,6 +39,7 @@ export const footerLinks = {
 export const contactLink = {
   ...footerLinks,
   textWrap: "nowrap",
+  textAlign: "center",
 };
 
 export const linksContainer = {

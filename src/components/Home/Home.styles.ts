@@ -1,3 +1,5 @@
+import { CSSProperties } from "react";
+
 export const paragraphMargin = {
   fontSize: "29px",
   textAlign: "center",
@@ -16,26 +18,40 @@ export const imagePlaceholder = { height: image.maxHeight };
 
 export const slideshowContainer = {
   overflow: "hidden",
-  backgroundColor: "#f5d3ee",
+  height: "calc(100vh - 56px)",
   marginBottom: "25px",
 };
 
-export const nonMobileSlideshowImage = { width: "100%", opacity: 0.45 };
+// setting a fixed height and width is causing aspect ratio distortion, consider different solution
+export const nonMobileSlideshowImage = {
+  width: "100%",
+  height: "calc(100vh - 56px)",
+  opacity: 0.2,
+};
 
 export const mobileSlideshowImage = {
   ...nonMobileSlideshowImage,
-  height: "100vh",
   width: "auto",
   marginLeft: "50%",
   transform: "translateX(-50%)",
 };
 
-export const homepageHeader = {
+export const homepageHeader: CSSProperties = {
   position: "absolute",
-  width: "100%",
-  fontWeight: "bold",
+  top: "50%",
+  transform: "translateY(-50%)",
+  margin: "auto",
   left: 0,
+  right: 0,
   textAlign: "center",
   zIndex: 2,
-  letterSpacing: ".045em",
+  width: "60%",
+};
+
+export const reactPlayerContainer = {
+  display: "flex",
+  justifyContent: "center",
+  flexDirection: "column",
+  textAlign: "center",
+  gap: "13px",
 };

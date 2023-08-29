@@ -4,6 +4,8 @@ import { backgroundColor } from "../../constants/globalStyles";
 
 /**
  * this component handles rendering a loading div of equivalent size with website background color while image is being loaded
+ *
+ * hardcodes img css display to be block
  */
 export const ImageLoader = ({
   style,
