@@ -8,11 +8,14 @@ import { ResponsiveAppContainer } from "../ResponsiveAppContainer/ResponsiveAppC
 import { PageBanner } from "../PageBanner/PageBanner";
 import savorTheSoundVJ from "./savorTheSoundVJ.jpg";
 import { defaultPageFadeInTime } from "../../constants/fadeTimes";
+import { useLocation } from "react-router-dom";
 
 export const Contact = () => {
+  const { state } = useLocation();
+
   const [contactFormData, setContactFormData] = useState({
-    title: "",
-    message: "",
+    title: state?.title || "",
+    message: state?.message || "",
     email: "",
   });
 
@@ -65,12 +68,7 @@ export const Contact = () => {
                 />
               </Box>
               <Box sx={styles.buttonContainer}>
-                <Button
-                  type="submit"
-                  value="Submit"
-                  disabled={disableSubmit}
-                  variant="contained"
-                >
+                <Button type="submit" value="Submit" disabled={disableSubmit}>
                   Submit
                 </Button>
               </Box>

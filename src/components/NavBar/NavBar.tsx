@@ -19,7 +19,7 @@ export const NavBar = () => {
       route: ROUTES.ABOUT,
     },
     {
-      navText: "Events & Concerts",
+      navText: "Event Calendar",
       route: ROUTES.EVENTS_AND_CONCERTS,
     },
     {

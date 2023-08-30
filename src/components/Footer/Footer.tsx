@@ -37,7 +37,7 @@ export const Footer = () => {
               sx={styles.footerLinks}
               onClick={() => handleNavItemClick(ROUTES.EVENTS_AND_CONCERTS)}
             >
-              Events & Concerts
+              Event Calendar
             </Typography>
             <Typography
               sx={styles.footerLinks}

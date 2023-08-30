@@ -26,7 +26,7 @@ export const slideshowContainer = {
 export const nonMobileSlideshowImage = {
   width: "100%",
   height: "calc(100vh - 56px)",
-  opacity: 0.2,
+  opacity: 0.5,
 };
 
 export const mobileSlideshowImage = {

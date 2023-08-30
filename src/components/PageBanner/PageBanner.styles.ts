@@ -4,7 +4,7 @@ export const pageBannerContainer = {
   marginBottom: "25px",
 };
 
-export const bannerImage = { width: "100%", opacity: 0.3 };
+export const bannerImage = { width: "100%", opacity: 0.6 };
 
 export const bannerHeader = {
   position: "absolute",
