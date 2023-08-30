@@ -17,6 +17,8 @@ export const darkBackgroundColor = "#242424";
 
 export const thematicColor = "#420734";
 
+export const buttonColor = "#d9b4ed";
+
 export const defaultPageTextStyle = {
   fontSize: "1.5rem",
   marginBottom: "20px",
@@ -32,6 +34,13 @@ export const theme = createTheme({
           // enabled outlined textfield border
           "&:hover:not($disabled):not($focused):not($error) $notchedOutline":
             {},
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          backgroundColor: buttonColor,
         },
       },
     },

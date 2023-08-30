@@ -1,7 +1,8 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
-import { IEvent } from "./Events";
+import { IEvent } from "./eventLists";
 
 export const Event = ({
   address,
@@ -10,6 +11,7 @@ export const Event = ({
   ticketLink,
   title,
 }: IEvent) => {
+  const locationQueryLink = `https://www.google.com/maps/search/?api=1&query=${address}`;
   return (
     <Box>
       <Typography
@@ -18,16 +20,23 @@ export const Event = ({
       >
         {title}
       </Typography>
-      <Typography variant="h6">{date.toLocaleDateString("en-US")}</Typography>
-      <Typography variant="h6">{address}</Typography>
+      <Typography variant="h6">
+        {date.toLocaleDateString("en-US", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })}
+      </Typography>
+      <Link variant="h6" href={locationQueryLink} target="_blank">
+        {address}
+      </Link>
       {details && <Typography variant="h6">{details}</Typography>}
-      <Button
-        sx={{ backgroundColor: "#4f8df7", marginTop: "5px" }}
-        href={ticketLink}
-        target="_blank"
-      >
-        Get Tickets
-      </Button>
+      {ticketLink && (
+        <Button sx={{ marginTop: "5px" }} href={ticketLink} target="_blank">
+          Get Tickets
+        </Button>
+      )}
     </Box>
   );
 };

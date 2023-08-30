@@ -9,8 +9,12 @@ import { PageBanner } from "../PageBanner/PageBanner";
 import { defaultPageFadeInTime } from "../../constants/fadeTimes";
 import { ImageLoader } from "../ImageLoader/ImageLoader";
 import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../constants/routes";
 
 export const Experience = () => {
+  const navigate = useNavigate();
+
   const experienceContentContainer = {
     display: "flex",
     flexDirection: "column",
@@ -19,6 +23,16 @@ export const Experience = () => {
   const experienceCategoryStyle = {
     borderRadius: "15px",
     padding: "15px",
+  };
+
+  const handleInquiryReroute = ({
+    title,
+    message,
+  }: {
+    title: string;
+    message: string;
+  }) => {
+    navigate(ROUTES.CONTACT, { state: { title, message } });
   };
 
   return (
@@ -72,8 +86,16 @@ export const Experience = () => {
                       <Typography>And more...</Typography>
                     </li>
                   </ul>
-                  <Button sx={{ backgroundColor: "#4f8df7" }}>
-                    Booking Inquiries
+                  <Button
+                    onClick={() =>
+                      handleInquiryReroute({
+                        title: "Having Xion Perform at My Ceremony",
+                        message:
+                          "I'm reaching out to inquire about booking Xion to hold ceremonial space...",
+                      })
+                    }
+                  >
+                    Ceremonial Inquiries
                   </Button>
                 </Box>
                 <Box>
@@ -107,7 +129,17 @@ export const Experience = () => {
                     melodies, Xion creates an inclusive, sacred space designed
                     to reconnect listeners to the divinity within each of us.
                   </Typography>
-                  <Button sx={{ backgroundColor: "#4f8df7" }}>Book Us</Button>
+                  <Button
+                    onClick={() =>
+                      handleInquiryReroute({
+                        title: "Booking a Xion Sound Waves Concert",
+                        message:
+                          "I'm reaching out to inquire about hiring Xion for a musical performance...",
+                      })
+                    }
+                  >
+                    Concert Booking
+                  </Button>
                 </Box>
                 <Box>
                   {/* add image grid (four images with gap) */}
