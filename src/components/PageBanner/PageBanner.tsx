@@ -18,8 +18,8 @@ export const PageBanner = ({
   let bannerHeight;
   let headerTopLocation;
   if (aboveMediumScreen) {
-    bannerHeight = "45vh";
-    headerTopLocation = "24vh";
+    bannerHeight = "35vh";
+    headerTopLocation = "20vh";
   } else if (aboveSmallScreen) {
     bannerHeight = "30vh";
     headerTopLocation = "16vh";

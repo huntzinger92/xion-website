@@ -8,6 +8,7 @@ import { defaultPageTextStyle } from "../../constants/globalStyles";
 import { defaultPageFadeInTime } from "../../constants/fadeTimes";
 
 export const About = () => {
+  const smallerPageText = { ...defaultPageTextStyle, fontSize: "1.15rem" };
   return (
     <Fade in timeout={defaultPageFadeInTime}>
       <Box>
@@ -15,25 +16,33 @@ export const About = () => {
         <Box>
           <ResponsiveAppContainer>
             <Box>
+              <Typography variant="h3" textAlign="center">
+                Our Legacy is Joy
+              </Typography>
               <Typography sx={defaultPageTextStyle}>
+                Our mission is to create inclusive, sacred space through music
+                designed to reconnect listeners to the divinity within each of
+                us.
+              </Typography>
+              <Typography sx={smallerPageText}>
                 Founded in 2020, Xion Sound Waves is a soulful and uplifting new
                 age choir known for delivering musical experiences unlike any
                 other.
               </Typography>
-              <Typography sx={defaultPageTextStyle}>
+              <Typography sx={smallerPageText}>
                 Led by founder and director VJ Herbert, Xion’s sound blends
                 complex harmonies, positive affirmations, and playful melodies
                 designed to reconnect listeners to the divinity within each of
                 us.
               </Typography>
-              <Typography sx={defaultPageTextStyle}>
+              <Typography sx={smallerPageText}>
                 Xion’s talents have been showcased widely, including the
                 Heartland Pagan Festival, Savor the Sound (an immersive event
                 that combines a coursed meal by a Michelin-star chef with music
                 inspired by the cuisine), multiple collaborations with artist
                 Calvin Arsenia, and more.
               </Typography>
-              <Typography sx={defaultPageTextStyle}>
+              <Typography sx={smallerPageText}>
                 Whether headlining concerts or powerfully holding meditative
                 space, Xion’s unique approach leaves audiences touched by love,
                 light, and healing.
