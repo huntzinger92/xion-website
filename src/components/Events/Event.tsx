@@ -14,10 +14,7 @@ export const Event = ({
   const locationQueryLink = `https://www.google.com/maps/search/?api=1&query=${address}`;
   return (
     <Box>
-      <Typography
-        variant="h6"
-        sx={{ fontStyle: "italic", textDecoration: "underline" }}
-      >
+      <Typography variant="h6" sx={{ fontStyle: "italic" }}>
         {title}
       </Typography>
       <Typography variant="h6">
