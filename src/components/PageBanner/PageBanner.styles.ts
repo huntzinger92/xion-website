@@ -8,6 +8,8 @@ export const pageBannerContainer = {
 export const bannerImage = {
   minHeight: "100%",
   minWidth: "100%",
+  marginLeft: "50%",
+  transform: "translateX(-50%)",
   opacity: 0.6,
 };
 

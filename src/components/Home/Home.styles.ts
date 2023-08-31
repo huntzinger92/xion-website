@@ -22,21 +22,14 @@ export const slideshowContainer = {
   marginBottom: "25px",
 };
 
-// setting a fixed height and width is causing aspect ratio distortion, consider different solution
-export const nonMobileSlideshowImage = {
+// this modifies the aspect ratio a bit at wider screen widths, but seems to be the least evil of all approaches tried so far
+export const slideshowImage = {
   minWidth: "100%",
   minHeight: "calc(100vh - 56px)",
-  // ugly hack to make sure that we reach minimum width and height without blowing picture up to huge proportions, allow to stretch off the screen "a bit"
-  maxWidth: "150%",
-  maxHeight: "135vh",
-  opacity: 0.5,
-};
-
-export const mobileSlideshowImage = {
-  ...nonMobileSlideshowImage,
-  width: "auto",
+  maxHeight: "120vh",
   marginLeft: "50%",
   transform: "translateX(-50%)",
+  opacity: 0.75,
 };
 
 export const homepageHeader: CSSProperties = {

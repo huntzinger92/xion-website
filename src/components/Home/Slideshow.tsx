@@ -15,16 +15,12 @@ export const Slideshow = () => {
   const theme = useTheme();
   const aboveSmallScreen = useMediaQuery(theme.breakpoints.up("sm"));
 
-  const imageStyle = aboveSmallScreen
-    ? styles.nonMobileSlideshowImage
-    : styles.mobileSlideshowImage;
-
   return (
     <Box sx={styles.slideshowContainer}>
       <FadeSlideshow autoplay arrows={false} duration={13000}>
         {homepageImages.map((homepageImage) => (
           <div key={homepageImage}>
-            <ImageLoader style={imageStyle} src={homepageImage} />
+            <ImageLoader style={styles.slideshowImage} src={homepageImage} />
           </div>
         ))}
       </FadeSlideshow>
