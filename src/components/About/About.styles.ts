@@ -1,11 +1,3 @@
-export const imageContainer = {
-  display: 'flex',
-  justifyContent: 'center',
-  marginBottom: '15px',
-};
+import { defaultPageTextStyle } from "../../constants/globalStyles";
 
-export const paragraphMargin = { marginBottom: '15px' };
-
-export const image = { maxHeight: '40vh', maxWidth: '100%' };
-
-export const imagePlaceholder = { height: image.maxHeight };
+export const smallerPageText = { ...defaultPageTextStyle, fontSize: "1.15rem" };

@@ -12,24 +12,12 @@ import { ImageLoader } from "../ImageLoader/ImageLoader";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
+import * as styles from "./Experience.styles";
 
 export const Experience = () => {
   const navigate = useNavigate();
   const theme = useTheme();
   const aboveSmallScreen = useMediaQuery(theme.breakpoints.up("sm"));
-
-  const experienceContentContainer = {
-    display: "flex",
-    flexDirection: "column",
-    gap: "15px",
-  };
-  const experienceCategoryStyle = {
-    display: "grid",
-    gridTemplateColumns: aboveSmallScreen ? "1fr 1fr" : undefined,
-    gridTemplateRows: aboveSmallScreen ? undefined : "auto auto",
-    gap: "30px",
-    padding: "15px",
-  };
 
   const handleInquiryReroute = ({
     title,
@@ -46,23 +34,22 @@ export const Experience = () => {
       <Box>
         <PageBanner image={curtains1} headerText="Experience Us" />
         <ResponsiveAppContainer>
-          <Box sx={experienceContentContainer}>
-            <Box sx={experienceCategoryStyle}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "10px",
-                }}
-              >
-                <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+          <Box sx={styles.experienceContentContainer}>
+            <Box
+              sx={{
+                ...styles.experienceCategoryStyle,
+                display: aboveSmallScreen ? "grid" : "flex",
+              }}
+            >
+              <Box sx={styles.categoryTextContainer}>
+                <Typography variant="h4" sx={styles.categoryHeader}>
                   Ceremonies
                 </Typography>
                 <Typography>
                   Engage Xion to hold sacred space for your next ceremony,
                   whether it be
                 </Typography>
-                <ul style={{ marginTop: 0, marginBottom: 0 }}>
+                <ul style={styles.unorderList}>
                   <li>
                     <Typography>Sound Meditations</Typography>
                   </li>
@@ -99,18 +86,17 @@ export const Experience = () => {
               </Box>
               <Box>
                 {/* add image grid (four images with gap) */}
-                <ImageLoader src={ceremony} style={{ maxWidth: "100%" }} />
+                <ImageLoader src={ceremony} style={styles.categoryImage} />
               </Box>
             </Box>
-            <Box sx={experienceCategoryStyle}>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "10px",
-                }}
-              >
-                <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+            <Box
+              sx={{
+                ...styles.experienceCategoryStyle,
+                display: aboveSmallScreen ? "grid" : "flex",
+              }}
+            >
+              <Box sx={styles.categoryTextContainer}>
+                <Typography variant="h4" sx={styles.categoryHeader}>
                   Concerts
                 </Typography>
                 <Typography>
@@ -136,7 +122,7 @@ export const Experience = () => {
                 {/* add image grid (four images with gap) */}
                 <ImageLoader
                   src={xionChoirPhoto}
-                  style={{ maxWidth: "100%" }}
+                  style={styles.categoryImage}
                 />
               </Box>
             </Box>

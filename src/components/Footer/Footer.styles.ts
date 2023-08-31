@@ -47,3 +47,22 @@ export const linksContainer = {
   flexDirection: "column",
   textAlign: "center",
 };
+
+export const socialIconsProps = {
+  bgColor: darkBackgroundColor,
+  fgColor: contrastingTextColor,
+  target: "_blank",
+};
+
+export const socialLinksContainer = {
+  display: "flex",
+  gap: "10px",
+  alignItems: "center",
+};
+
+export const copyright = {
+  fontSize: "12px",
+  textAlign: "center",
+  color: "white",
+  marginTop: "10px",
+};

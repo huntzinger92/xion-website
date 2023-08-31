@@ -12,28 +12,13 @@ export const PageBanner = ({
   headerText: string;
 }) => {
   const theme = useTheme();
-  const aboveMediumScreen = useMediaQuery(theme.breakpoints.up("md"));
   const aboveSmallScreen = useMediaQuery(theme.breakpoints.up("sm"));
-  // make banner height and header location responsive
-  let bannerHeight;
-  let headerTopLocation;
-  if (aboveMediumScreen) {
-    bannerHeight = "35vh";
-    headerTopLocation = "15.5vh";
-  } else if (aboveSmallScreen) {
-    bannerHeight = "30vh";
-    headerTopLocation = "10vh";
-  } else {
-    // mobile case
-    bannerHeight = "auto";
-    headerTopLocation = "50px";
-  }
+
   return (
     <Box
       sx={{
         ...styles.pageBannerContainer,
-        height: bannerHeight,
-        minHeight: aboveSmallScreen ? "200px" : "unset",
+        height: aboveSmallScreen ? "275px" : "unset",
       }}
     >
       <ImageLoader
@@ -47,8 +32,8 @@ export const PageBanner = ({
         variant="h3"
         sx={{
           ...styles.bannerHeader,
-          top: headerTopLocation,
           position: aboveSmallScreen ? styles.bannerHeader.position : "static",
+          transform: aboveSmallScreen ? styles.bannerHeader.transform : "unset",
         }}
       >
         {headerText}

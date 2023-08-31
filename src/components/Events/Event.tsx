@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import { IEvent } from "./eventLists";
+import * as styles from "./Events.styles";
 
 export const Event = ({
   address,
@@ -14,7 +15,7 @@ export const Event = ({
   const locationQueryLink = `https://www.google.com/maps/search/?api=1&query=${address}`;
   return (
     <Box>
-      <Typography variant="h6" sx={{ fontStyle: "italic" }}>
+      <Typography variant="h6" sx={styles.eventTitle}>
         {title}
       </Typography>
       <Typography variant="h6">
@@ -30,7 +31,7 @@ export const Event = ({
       </Link>
       {details && <Typography variant="h6">{details}</Typography>}
       {ticketLink && (
-        <Button sx={{ marginTop: "5px" }} href={ticketLink} target="_blank">
+        <Button sx={styles.getTicketsButton} href={ticketLink} target="_blank">
           Get Tickets
         </Button>
       )}

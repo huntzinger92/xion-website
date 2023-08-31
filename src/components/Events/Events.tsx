@@ -9,28 +9,19 @@ import { defaultPageFadeInTime } from "../../constants/fadeTimes";
 import { Event } from "./Event";
 import { socialMediaLinks } from "../../constants/socialMediaLinks";
 import { futureEvents, pastEvents } from "./eventLists";
-
-// consider adding image grid of 4 for each event on experience us page
-// cleanup, move to styles files, create event component
-// add social media links to footer
+import * as styles from "./Events.styles";
 
 export const Events = () => {
   return (
     <Fade in timeout={defaultPageFadeInTime}>
-      <Box sx={{ marginBottom: "25px" }}>
+      <Box sx={styles.eventsPageContainer}>
         <PageBanner image={savorTheSoundGroup} headerText="Event Calendar" />
         <ResponsiveAppContainer>
-          <Box sx={{ marginBottom: "25px" }}>
+          <Box sx={styles.upcomingHeaderContainer}>
             <Typography variant="h4">Upcoming Events</Typography>
             <hr />
           </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "20px",
-            }}
-          >
+          <Box sx={styles.upcomingEventsContainer}>
             {futureEvents.length === 0 && (
               <Typography variant="h6">
                 More events coming soon! Follow{" "}
@@ -44,17 +35,11 @@ export const Events = () => {
               <Event {...futureEvent} key={futureEvent.title} />
             ))}
           </Box>
-          <Box sx={{ marginTop: "75px", marginBottom: "25px" }}>
+          <Box sx={styles.pastEventsHeaderContainer}>
             <Typography variant="h6">Past Events</Typography>
             <hr />
           </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "20px",
-            }}
-          >
+          <Box sx={styles.pastEventsContainer}>
             {pastEvents.map((pastEvent) => (
               <Event {...pastEvent} key={pastEvent.title} />
             ))}

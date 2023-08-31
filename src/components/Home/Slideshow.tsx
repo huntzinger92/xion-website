@@ -34,9 +34,6 @@ export const Slideshow = () => {
             Xion Sound Waves
           </Typography>
         </Box>
-        {/* <Box>
-          <ImageLoader style={styles.homepageHeader} src={xionNameHeader} />
-        </Box> */}
       </Fade>
     </Box>
   );
