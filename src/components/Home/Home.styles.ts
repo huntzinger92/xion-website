@@ -30,8 +30,6 @@ export const slideshowImage = {
   marginLeft: "50%",
   transform: "translateX(-50%)",
   opacity: 0.75,
-  maskImage:
-    "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%)",
 };
 
 export const homepageHeader: CSSProperties = {

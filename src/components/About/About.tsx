@@ -13,7 +13,7 @@ export const About = () => {
   return (
     <Fade in timeout={defaultPageFadeInTime}>
       <Box>
-        <PageBanner image={mandalaBlue} headerText="Our Legacy is Joy" />
+        <PageBanner image={mandalaBlue} />
         <Box>
           <ResponsiveAppContainer>
             <Box>
