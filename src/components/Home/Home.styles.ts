@@ -41,7 +41,30 @@ export const homepageHeader: CSSProperties = {
   right: 0,
   textAlign: "center",
   zIndex: 2,
-  width: "60%",
+  display: "flex",
+  justifyContent: "center",
+  flexDirection: "column",
+};
+
+export const headerWordsCommon = {
+  textShadow: `1px 0 .5px #efefef,
+    0 1px .5px #efefef,
+    -1px 0 .5px #efefef,
+    0 -1px .5px #efefef`,
+};
+
+export const headerXionWord = {
+  ...headerWordsCommon,
+  color: "#D48B24",
+  fontSize: "max(17vw, 7rem)",
+  lineHeight: 0.6,
+  letterSpace: "20px",
+};
+
+export const headerSoundWavesWords = {
+  ...headerWordsCommon,
+  color: "#c4801f",
+  fontSize: "max(7vw, 3rem)",
 };
 
 export const reactPlayerContainer = {

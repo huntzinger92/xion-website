@@ -7,19 +7,18 @@ import { PageBanner } from "../PageBanner/PageBanner";
 import { defaultPageTextStyle } from "../../constants/globalStyles";
 import { defaultPageFadeInTime } from "../../constants/fadeTimes";
 import * as styles from "./About.styles";
+import { PageHeader } from "../PageHeader/PageHeader";
 
 export const About = () => {
   return (
     <Fade in timeout={defaultPageFadeInTime}>
       <Box>
-        <PageBanner image={mandalaBlue} headerText="About Xion Sound Waves" />
+        <PageBanner image={mandalaBlue} />
         <Box>
           <ResponsiveAppContainer>
             <Box>
-              <Typography variant="h3" textAlign="center">
-                Our Legacy is Joy
-              </Typography>
-              <Typography sx={defaultPageTextStyle}>
+              <PageHeader text="Our Legacy is Joy" />
+              <Typography sx={{ ...defaultPageTextStyle, fontSize: "1.3rem" }}>
                 Our mission is to create inclusive, sacred space through music
                 designed to reconnect listeners to the divinity within each of
                 us.

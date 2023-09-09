@@ -10,11 +10,13 @@ import { Contact } from "./components/Contact/Contact";
 import { Footer } from "./components/Footer/Footer";
 import { Experience } from "./components/Experience/Experience";
 import { NotFound } from "./components/NotFound/NotFound";
+import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <NavBar />
+      <ScrollToTop />
       {/* make all pages have a bottom margin of 25px before footer */}
       <Box sx={{ marginBottom: "25px", minHeight: "70vh" }}>
         <Routes>

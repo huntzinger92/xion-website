@@ -1,7 +1,9 @@
+import "./PageBanner.css";
+
 export const pageBannerContainer = {
   width: "100%",
   overflow: "hidden",
-  marginBottom: "25px",
+  marginBottom: "5px",
   position: "relative",
 };
 
@@ -24,4 +26,10 @@ export const bannerHeader = {
   letterSpacing: ".045em",
   marginBottom: "5px",
   fontWeight: "bold",
+  fontFamily: "'Ubuntu', sans-serif",
+  color: "#8ab1c3",
+  textShadow: `1px 0 .5px #a0cade,
+    0 1px .5px #a0cade,
+    -1px 0 .5px #a0cade,
+    0 -1px .5px #a0cade`,
 };

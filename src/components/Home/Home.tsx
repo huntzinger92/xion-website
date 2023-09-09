@@ -18,13 +18,14 @@ export const Home = () => {
         <Slideshow />
         <ResponsiveAppContainer>
           <Box sx={styles.reactPlayerContainer}>
-            <Typography variant="h6">
+            <Typography variant="h5">
               Xion Sound Waves performing "Colors & Words" at the Heartland
               Pagan Festival in 2022
             </Typography>
             <ReactPlayer
               style={{
                 margin: "auto",
+                marginTop: "5px",
                 maxWidth: "90%",
                 maxHeight: aboveSmallScreen ? "370px" : "225px",
               }}

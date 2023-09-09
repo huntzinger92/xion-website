@@ -10,16 +10,18 @@ import { Event } from "./Event";
 import { socialMediaLinks } from "../../constants/socialMediaLinks";
 import { futureEvents, pastEvents } from "./eventLists";
 import * as styles from "./Events.styles";
+import { headerColor } from "../../constants/globalStyles";
 
 export const Events = () => {
   return (
     <Fade in timeout={defaultPageFadeInTime}>
       <Box sx={styles.eventsPageContainer}>
-        <PageBanner image={savorTheSoundGroup} headerText="Event Calendar" />
+        <PageBanner image={savorTheSoundGroup} />
         <ResponsiveAppContainer>
           <Box sx={styles.upcomingHeaderContainer}>
-            <Typography variant="h4">Upcoming Events</Typography>
-            <hr />
+            <Typography variant="h4" color={headerColor}>
+              Upcoming Events
+            </Typography>
           </Box>
           <Box sx={styles.upcomingEventsContainer}>
             {futureEvents.length === 0 && (
@@ -36,8 +38,9 @@ export const Events = () => {
             ))}
           </Box>
           <Box sx={styles.pastEventsHeaderContainer}>
-            <Typography variant="h6">Past Events</Typography>
-            <hr />
+            <Typography variant="h5" color={headerColor}>
+              Past Events
+            </Typography>
           </Box>
           <Box sx={styles.pastEventsContainer}>
             {pastEvents.map((pastEvent) => (
