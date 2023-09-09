@@ -13,6 +13,7 @@ import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
 import * as styles from "./Experience.styles";
+import { PageHeader } from "../PageHeader/PageHeader";
 
 export const Experience = () => {
   const navigate = useNavigate();
@@ -32,9 +33,10 @@ export const Experience = () => {
   return (
     <Fade in timeout={defaultPageFadeInTime}>
       <Box>
-        <PageBanner image={curtains1} headerText="Experience Us" />
+        <PageBanner image={curtains1} />
         <ResponsiveAppContainer>
           <Box sx={styles.experienceContentContainer}>
+            <PageHeader text="Experience Us" />
             <Box
               sx={{
                 ...styles.experienceCategoryStyle,
@@ -80,6 +82,7 @@ export const Experience = () => {
                         "I'm reaching out to inquire about booking Xion to hold ceremonial space...",
                     })
                   }
+                  sx={styles.buttonStyle}
                 >
                   Ceremonial Inquiries
                 </Button>
@@ -114,6 +117,7 @@ export const Experience = () => {
                         "I'm reaching out to inquire about hiring Xion for a musical performance...",
                     })
                   }
+                  sx={styles.buttonStyle}
                 >
                   Concert Booking
                 </Button>

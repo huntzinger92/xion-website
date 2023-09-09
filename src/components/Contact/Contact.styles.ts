@@ -17,3 +17,9 @@ export const buttonContainer = {
   justifyContent: "center",
   marginTop: "15px",
 };
+
+export const button = {
+  paddingLeft: "10px",
+  paddingRight: "10px",
+  fontSize: "18px",
+};

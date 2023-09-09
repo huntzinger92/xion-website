@@ -1,8 +1,7 @@
 import { createTheme } from "@mui/material/styles";
+import "./globalStyles.css";
 
 export const backgroundColor = "#f0f0f0";
-
-export const slightlyDarkerBackgroundColor = "#ebebed";
 
 export const contrastingBackgroundColor = "#ffffff";
 
@@ -11,13 +10,13 @@ export const defaultTextColor = "#212121";
 // navbar button text
 export const contrastingTextColor = "white";
 
-export const disabledButtonTextColor = "gray";
-
 export const darkBackgroundColor = "#242424";
 
-export const thematicColor = "#420734";
+export const thematicColor = "#2A4C70";
 
-export const buttonColor = "#d9b4ed";
+export const buttonColor = "#5aa2ed";
+
+export const headerColor = "#234970";
 
 export const defaultPageTextStyle = {
   fontSize: "1.5rem",
@@ -117,6 +116,7 @@ export const theme = createTheme({
     },
   },
   typography: {
+    fontFamily: "Ubuntu, sans-serif",
     button: {
       textTransform: "none",
     },

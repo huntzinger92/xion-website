@@ -1,15 +1,17 @@
 import { useMediaQuery, useTheme } from "@mui/material";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
 import * as styles from "./PageBanner.styles";
 import { ImageLoader } from "../ImageLoader/ImageLoader";
+import "./PageBanner.css";
 
 export const PageBanner = ({
   image,
-  headerText,
 }: {
   image: string;
-  headerText: string;
+  /**
+   * leaving this is to make it easy to bring back, if we want to display text on top of banner image
+   */
+  headerText?: string;
 }) => {
   const theme = useTheme();
   const aboveSmallScreen = useMediaQuery(theme.breakpoints.up("sm"));
@@ -20,6 +22,7 @@ export const PageBanner = ({
         ...styles.pageBannerContainer,
         height: aboveSmallScreen ? "275px" : "unset",
       }}
+      className="pageBannerImageContainer"
     >
       <ImageLoader
         src={image}
@@ -28,16 +31,6 @@ export const PageBanner = ({
           display: aboveSmallScreen ? "block" : "none", // hide banner image on mobile
         }}
       />
-      <Typography
-        variant="h3"
-        sx={{
-          ...styles.bannerHeader,
-          position: aboveSmallScreen ? styles.bannerHeader.position : "static",
-          transform: aboveSmallScreen ? styles.bannerHeader.transform : "unset",
-        }}
-      >
-        {headerText}
-      </Typography>
     </Box>
   );
 };

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Proza+Libre&family=Ubuntu:wght@700&display=swap');
+
+.PageBannerHeader {
+    font-family: Ubuntu, sans-serif
+}
+
+.pageBannerImageContainer {
+  position: relative; 
+}
+
+/* soften border with the rest of page */
+.pageBannerImageContainer:after {
+  content:""; 
+  position: absolute; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, rgba(232, 220, 230,0) 0%,#9fcce0);
+  height: 2%;  
+}

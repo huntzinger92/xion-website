@@ -1,3 +1,5 @@
+import { headerColor } from "../../constants/globalStyles";
+
 export const experienceContentContainer = {
   display: "flex",
   flexDirection: "column",
@@ -9,6 +11,7 @@ export const experienceCategoryStyle = {
   flexDirection: "column-reverse",
   gap: "20px",
   padding: "15px",
+  paddingTop: "0px",
 };
 
 export const categoryTextContainer = {
@@ -17,8 +20,10 @@ export const categoryTextContainer = {
   gap: "10px",
 };
 
-export const categoryHeader = { fontWeight: "bold" };
+export const categoryHeader = { color: headerColor };
 
 export const unorderList = { marginTop: 0, marginBottom: 0 };
 
 export const categoryImage = { maxWidth: "100%" };
+
+export const buttonStyle = { fontSize: "18px" };

@@ -9,6 +9,7 @@ import { PageBanner } from "../PageBanner/PageBanner";
 import savorTheSoundVJ from "./savorTheSoundVJ.jpg";
 import { defaultPageFadeInTime } from "../../constants/fadeTimes";
 import { useLocation } from "react-router-dom";
+import { PageHeader } from "../PageHeader/PageHeader";
 
 export const Contact = () => {
   const { state } = useLocation();
@@ -32,9 +33,10 @@ export const Contact = () => {
   return (
     <Fade in timeout={defaultPageFadeInTime}>
       <Box>
-        <PageBanner image={savorTheSoundVJ} headerText="Contact Us" />
+        <PageBanner image={savorTheSoundVJ} />
         <ResponsiveAppContainer>
           <Box>
+            <PageHeader text="Contact Us" />
             <form name="contact" method="post">
               <input type="hidden" name="form-name" value="contact" />
               <Box sx={styles.formContainer}>
@@ -68,7 +70,12 @@ export const Contact = () => {
                 />
               </Box>
               <Box sx={styles.buttonContainer}>
-                <Button type="submit" value="Submit" disabled={disableSubmit}>
+                <Button
+                  type="submit"
+                  value="Submit"
+                  disabled={disableSubmit}
+                  sx={styles.button}
+                >
                   Submit
                 </Button>
               </Box>
