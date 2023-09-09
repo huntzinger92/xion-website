@@ -3,18 +3,18 @@ import Box from "@mui/material/Box";
 import Fade from "@mui/material/Fade";
 import Typography from "@mui/material/Typography";
 import { Fade as FadeSlideshow } from "react-slideshow-image";
-import choirPhotoCropped from "./choirPhotoCropped.jpg";
+import choirPhotoCropped1 from "./choirPhotoCropped1.jpg";
 import xionSilhouette from "./xionSilhouette.jpeg";
 import * as styles from "./Home.styles";
 import { ImageLoader } from "../ImageLoader/ImageLoader";
 import "./Slideshow.css";
 
-const homepageImages = [xionSilhouette, choirPhotoCropped];
+const homepageImages = [xionSilhouette, choirPhotoCropped1];
 
 export const Slideshow = () => {
   return (
     <Box sx={styles.slideshowContainer} className="slideshowContainer">
-      <FadeSlideshow autoplay arrows={false} duration={13000}>
+      <FadeSlideshow autoplay arrows={false} duration={2000}>
         {homepageImages.map((homepageImage) => (
           <div key={homepageImage}>
             <ImageLoader style={styles.slideshowImage} src={homepageImage} />

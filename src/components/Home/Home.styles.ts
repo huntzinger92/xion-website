@@ -34,8 +34,8 @@ export const slideshowImage = {
 
 export const homepageHeader: CSSProperties = {
   position: "absolute",
-  top: "50%",
-  transform: "translateY(-50%)",
+  top: "46%",
+  transform: "translateY(-54%)",
   margin: "auto",
   left: 0,
   right: 0,
@@ -63,7 +63,7 @@ export const headerXionWord = {
 
 export const headerSoundWavesWords = {
   ...headerWordsCommon,
-  color: "#c4801f",
+  color: "#dd8f22",
   fontSize: "max(7vw, 3rem)",
 };
 
