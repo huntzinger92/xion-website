@@ -14,7 +14,7 @@ const homepageImages = [xionSilhouette, choirPhotoCropped1];
 export const Slideshow = () => {
   return (
     <Box sx={styles.slideshowContainer} className="slideshowContainer">
-      <FadeSlideshow autoplay arrows={false} duration={2000}>
+      <FadeSlideshow autoplay arrows={false} duration={13000}>
         {homepageImages.map((homepageImage) => (
           <div key={homepageImage}>
             <ImageLoader style={styles.slideshowImage} src={homepageImage} />
