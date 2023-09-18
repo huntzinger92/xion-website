@@ -19,8 +19,7 @@ export const Home = () => {
         <ResponsiveAppContainer>
           <Box sx={styles.reactPlayerContainer}>
             <Typography variant="h5">
-              Xion Sound Waves performing "Colors & Words" at the Heartland
-              Pagan Festival in 2022
+              "Colors & Words" at the 2022 Heartland Pagan Festival
             </Typography>
             <ReactPlayer
               style={{

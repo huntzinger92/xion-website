@@ -1,32 +1,42 @@
 import "react-slideshow-image/dist/styles.css";
 import Box from "@mui/material/Box";
-import Fade from "@mui/material/Fade";
-import Typography from "@mui/material/Typography";
 import { Fade as FadeSlideshow } from "react-slideshow-image";
-import choirPhotoCropped1 from "./choirPhotoCropped1.jpg";
+import xionLogoBackgroundWider1 from "./xionLogoBackgroundWider1.jpg";
+import xionLogoExtended from "./xionLogoExtended.jpg";
 import xionSilhouette from "./xionSilhouette.jpeg";
 import * as styles from "./Home.styles";
 import { ImageLoader } from "../ImageLoader/ImageLoader";
 import "./Slideshow.css";
+import { useMediaQuery, useTheme } from "@mui/material";
 
-const homepageImages = [xionSilhouette, choirPhotoCropped1];
+// figure out image sizing issue
+// add big fern credit
+// remove unused files
+// merge
+// let choir know, promote on socials
 
 export const Slideshow = () => {
+  const theme = useTheme();
+  const isAboveMediumScreen = useMediaQuery(theme.breakpoints.up("md"));
+  const homepageImages = isAboveMediumScreen
+    ? [xionLogoBackgroundWider1, xionSilhouette]
+    : [xionLogoExtended, xionSilhouette];
+  const imageYTranslate = isAboveMediumScreen ? "-8%" : "-17%";
   return (
     <Box sx={styles.slideshowContainer} className="slideshowContainer">
       <FadeSlideshow autoplay arrows={false} duration={13000}>
         {homepageImages.map((homepageImage) => (
           <div key={homepageImage}>
-            <ImageLoader style={styles.slideshowImage} src={homepageImage} />
+            <ImageLoader
+              style={{
+                ...styles.slideshowImage,
+                transform: `translate(-50%, ${imageYTranslate})`,
+              }}
+              src={homepageImage}
+            />
           </div>
         ))}
       </FadeSlideshow>
-      <Fade in style={{ transitionDelay: "350ms" }} timeout={3500}>
-        <Box sx={styles.homepageHeader}>
-          <Typography sx={styles.headerXionWord}>Xion</Typography>
-          <Typography sx={styles.headerSoundWavesWords}>Sound Waves</Typography>
-        </Box>
-      </Fade>
     </Box>
   );
 };

@@ -15,6 +15,7 @@ export const footerContainer = {
 export const footerContentWrapper = {
   display: "grid",
   gridTemplateColumns: "1fr 1fr 1fr",
+  flexDirection: "column",
   gap: "15px",
   alignItems: "center",
   justifyContent: "center",
@@ -65,4 +66,11 @@ export const copyright = {
   textAlign: "center",
   color: "white",
   marginTop: "10px",
+};
+
+export const footerImage = {
+  maxHeight: "100px",
+  "&:hover": {
+    cursor: "pointer",
+  },
 };

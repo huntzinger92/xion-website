@@ -15,6 +15,10 @@ export const NavBar = () => {
 
   const pages = [
     {
+      navText: "Home",
+      route: ROUTES.HOME,
+    },
+    {
       navText: "About",
       route: ROUTES.ABOUT,
     },

@@ -64,12 +64,6 @@ export const SmallNavBar = ({
         sx={styles.smallNavMenuStyle}
         data-testid="small-nav-links"
       >
-        <MenuItem
-          onClick={() => onNavItemClick(ROUTES.HOME)}
-          sx={styles.navButtonContainer}
-        >
-          <Typography sx={styles.navButtonText}>Home</Typography>
-        </MenuItem>
         {pages.map(({ navText, route }) => (
           <MenuItem
             key={navText}
