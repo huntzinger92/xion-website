@@ -16,6 +16,8 @@ export const image = { maxHeight: "40vh", maxWidth: "100%" };
 
 export const imagePlaceholder = { height: image.maxHeight };
 
+// export const imageAndContainerHeight =
+
 export const slideshowContainer = {
   overflow: "hidden",
   height: "calc(100vh - 56px)",
@@ -28,8 +30,7 @@ export const slideshowImage = {
   minHeight: "calc(100vh - 56px)",
   maxHeight: "120vh",
   marginLeft: "50%",
-  transform: "translateX(-50%)",
-  opacity: 0.75,
+  opacity: 0.95,
 };
 
 export const homepageHeader: CSSProperties = {

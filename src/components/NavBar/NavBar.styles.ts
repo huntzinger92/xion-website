@@ -124,9 +124,10 @@ export const bigLogoWrapper = {
 };
 
 export const bigLogo = {
-  maxHeight: "40px",
-  backgroundColor: "transparent",
-  filter: "invert(1)",
+  maxHeight: "72px",
+  // maxHeight: "40px",
+  // backgroundColor: "transparent",
+  // filter: "invert(1)",
 };
 
 export const smallLogo = {

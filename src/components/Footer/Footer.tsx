@@ -1,5 +1,6 @@
 import { useMediaQuery, useTheme } from "@mui/material";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import * as styles from "./Footer.styles";
 import { ResponsiveAppContainer } from "../ResponsiveAppContainer/ResponsiveAppContainer";
@@ -7,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
 import { socialMediaLinks } from "../../constants/socialMediaLinks";
 import { SocialIcon } from "react-social-icons";
+import { ImageLoader } from "../ImageLoader/ImageLoader";
+import xionLogo from "./xionLogo.png";
 
 export const Footer = () => {
   const navigate = useNavigate();
@@ -20,14 +23,13 @@ export const Footer = () => {
     <Box sx={styles.footerContainer}>
       <ResponsiveAppContainer>
         <Box sx={styles.footerContentWrapper}>
-          <Box>
-            <Typography
-              variant="h5"
-              sx={styles.footerLinks}
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              sx={{ padding: 0 }}
               onClick={() => handleNavItemClick(ROUTES.HOME)}
             >
-              Xion Sound Waves
-            </Typography>
+              <ImageLoader src={xionLogo} style={styles.footerImage} />
+            </Button>
           </Box>
           <Box sx={styles.linksContainer}>
             <Typography
