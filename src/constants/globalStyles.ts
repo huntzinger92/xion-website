@@ -28,7 +28,7 @@ export const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: darkBackgroundColor,
+          backgroundColor: "#121110",
           color: contrastingTextColor,
           // enabled outlined textfield border
           "&:hover:not($disabled):not($focused):not($error) $notchedOutline":

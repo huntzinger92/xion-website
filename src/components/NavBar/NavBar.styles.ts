@@ -1,9 +1,11 @@
 import { SxProps } from "@mui/material";
 import {
   contrastingTextColor,
-  darkBackgroundColor,
+  // darkBackgroundColor,
   defaultTextColor,
 } from "../../constants/globalStyles";
+
+const darkBackgroundColor = "#121110";
 
 export const mediumNavBarButtonsContainer = {
   display: { xs: "none", md: "flex" },
