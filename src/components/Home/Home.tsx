@@ -19,7 +19,7 @@ export const Home = () => {
         <ResponsiveAppContainer>
           <Box sx={styles.reactPlayerContainer}>
             <Typography variant="h5">
-              "Colors & Words" at the 2022 Heartland Pagan Festival
+              "Colors & Words" at the 2023 Heartland Pagan Festival
             </Typography>
             <ReactPlayer
               style={{
