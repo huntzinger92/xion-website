@@ -1,0 +1,43 @@
+.categoryImage::before {
+  content: "";
+  display: block;
+  
+  /* Scale */
+  width: 77%;
+  height: 0;
+  padding-bottom: 77%;
+  
+  /* Position */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  
+  /* Border */
+  border: solid 400px #c5dfeb;
+  border-radius: 50%;
+}
+
+.categoryImage::after {
+  content: "";
+  display: block;
+  
+  /* Scale */
+  width: 77%;
+  height: 0;
+  padding-bottom: 77%;
+  
+  /* Position */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  
+  /* Border */
+  /* overflow: visible; */
+  border: 2px solid #234970;
+  border-radius: 50%;
+  box-shadow: 0px 0px 17px #234970;
+}

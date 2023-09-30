@@ -24,6 +24,6 @@ export const categoryHeader = { color: headerColor };
 
 export const unorderList = { marginTop: 0, marginBottom: 0 };
 
-export const categoryImage = { width: "100%", minHeight: "175px" };
+export const categoryImage = { width: "100%" };
 
 export const buttonStyle = { fontSize: "18px" };

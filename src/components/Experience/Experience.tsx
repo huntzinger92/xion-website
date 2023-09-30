@@ -14,11 +14,17 @@ import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
 import * as styles from "./Experience.styles";
 import { PageHeader } from "../PageHeader/PageHeader";
+import "./Experience.css";
+import { useWindowSize } from "../../hooks/useWindowSize";
+import { CategoryImage } from "./CategoryImage";
 
 export const Experience = () => {
   const navigate = useNavigate();
   const theme = useTheme();
-  const aboveSmallScreen = useMediaQuery(theme.breakpoints.up("sm"));
+  const aboveMediumScreen = useMediaQuery(theme.breakpoints.up("md"));
+  const belowSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  console.log({ belowSmallScreen });
+  const [windowWidth] = useWindowSize();
 
   const handleInquiryReroute = ({
     title,
@@ -40,7 +46,7 @@ export const Experience = () => {
             <Box
               sx={{
                 ...styles.experienceCategoryStyle,
-                display: aboveSmallScreen ? "grid" : "flex",
+                display: aboveMediumScreen ? "grid" : "flex",
               }}
             >
               <Box sx={styles.categoryTextContainer}>
@@ -87,15 +93,12 @@ export const Experience = () => {
                   Ceremonial Inquiries
                 </Button>
               </Box>
-              <Box>
-                {/* add image grid (four images with gap) */}
-                <ImageLoader src={ceremony} style={styles.categoryImage} />
-              </Box>
+              <CategoryImage src={ceremony} />
             </Box>
             <Box
               sx={{
                 ...styles.experienceCategoryStyle,
-                display: aboveSmallScreen ? "grid" : "flex",
+                display: aboveMediumScreen ? "grid" : "flex",
               }}
             >
               <Box sx={styles.categoryTextContainer}>
@@ -123,11 +126,12 @@ export const Experience = () => {
                 </Button>
               </Box>
               <Box>
+                <CategoryImage src={xionChoirPhoto} />
                 {/* add image grid (four images with gap) */}
-                <ImageLoader
+                {/* <ImageLoader
                   src={xionChoirPhoto}
                   style={styles.categoryImage}
-                />
+                /> */}
               </Box>
             </Box>
           </Box>

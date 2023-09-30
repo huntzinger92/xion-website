@@ -5,6 +5,7 @@ import { Fade as FadeSlideshow } from "react-slideshow-image";
 import xionLogoBackgroundWider1 from "./xionLogoBackgroundWider1.jpg";
 import xionLogoExtended from "./xionLogoExtended.jpg";
 import xionSilhouette from "./xionSilhouette.jpeg";
+import choirPhoto from "./choirPhoto.jpg";
 import * as styles from "./Home.styles";
 import { ImageLoader } from "../ImageLoader/ImageLoader";
 import "./Slideshow.css";
@@ -13,13 +14,14 @@ import { useMediaQuery, useTheme } from "@mui/material";
 export const Slideshow = () => {
   const theme = useTheme();
   const isAboveMediumScreen = useMediaQuery(theme.breakpoints.up("md"));
+  const sharedHomepageImages = [xionSilhouette, choirPhoto];
   const homepageImages = isAboveMediumScreen
-    ? [xionLogoBackgroundWider1, xionSilhouette]
-    : [xionLogoExtended, xionSilhouette];
+    ? [xionLogoBackgroundWider1, ...sharedHomepageImages]
+    : [xionLogoExtended, ...sharedHomepageImages];
   const imageYTranslate = isAboveMediumScreen ? "-8%" : "-17%";
   return (
     <Box sx={styles.slideshowContainer} className="slideshowContainer">
-      <FadeSlideshow autoplay arrows={false} duration={15000}>
+      <FadeSlideshow arrows={false} autoplay canSwipe duration={13000}>
         {homepageImages.map((homepageImage) => (
           <div key={homepageImage}>
             <ImageLoader
