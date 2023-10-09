@@ -34,7 +34,7 @@ export const Events = () => {
               </Typography>
             )}
             {futureEvents.map((futureEvent) => (
-              <Event {...futureEvent} key={futureEvent.title} />
+              <Event {...futureEvent} isFutureEvent key={futureEvent.title} />
             ))}
           </Box>
           <Box sx={styles.pastEventsHeaderContainer}>

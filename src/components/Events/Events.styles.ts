@@ -30,4 +30,4 @@ export const pastEventsContainer = {
 
 export const eventTitle = { fontStyle: "italic" };
 
-export const getTicketsButton = { marginTop: "5px" };
+export const getTicketsButton = { marginTop: "10px" };

@@ -5,14 +5,20 @@ import Typography from "@mui/material/Typography";
 import { IEvent } from "./eventLists";
 import * as styles from "./Events.styles";
 
+export interface IEventProps extends IEvent {
+  isFutureEvent?: boolean;
+}
+
 export const Event = ({
   address,
   date,
   details,
+  isFutureEvent,
   ticketLink,
   title,
-}: IEvent) => {
+}: IEventProps) => {
   const locationQueryLink = `https://www.google.com/maps/search/?api=1&query=${address}`;
+  const shouldShowTicketLink = isFutureEvent && ticketLink;
   return (
     <Box>
       <Typography variant="h6" sx={styles.eventTitle}>
@@ -30,7 +36,7 @@ export const Event = ({
         {address}
       </Link>
       {details && <Typography variant="h6">{details}</Typography>}
-      {ticketLink && (
+      {shouldShowTicketLink && (
         <Button sx={styles.getTicketsButton} href={ticketLink} target="_blank">
           Get Tickets
         </Button>

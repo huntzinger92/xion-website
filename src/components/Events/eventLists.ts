@@ -8,6 +8,15 @@ export interface IEvent {
 
 const eventList: IEvent[] = [
   {
+    title: "Xion Sound Waves at Prospero's Books",
+    date: new Date("November 5, 2023"),
+    address: "1800 W 39th St, Kansas City, MO 64111",
+    ticketLink:
+      "https://www.eventbrite.com/e/xion-at-propseros-books-tickets-734800697667",
+    details:
+      "Get your presale ticket today and secure your place amidst a privileged audience for an unforgettable evening with Xion Sound Waves. Join us and prepare for a night of musical transcendence! Doors open at 6:30pm.",
+  },
+  {
     title: "Calvin Arsenia Paradise Album Release Concert (Saturday)",
     date: new Date("June 24, 2023"),
     address: "The Emerald, 1715 W 9th St, Kansas City, MO 64101",
