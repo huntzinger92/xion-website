@@ -7,6 +7,7 @@ import { ResponsiveAppContainer } from "../ResponsiveAppContainer/ResponsiveAppC
 import { defaultPageFadeInTime } from "../../constants/fadeTimes";
 import ReactPlayer from "react-player";
 import * as styles from "./Home.styles";
+import { PromotedEvent } from "./PromotedEvent";
 
 export const Home = () => {
   const theme = useTheme();
@@ -17,19 +18,22 @@ export const Home = () => {
       <Box>
         <Slideshow />
         <ResponsiveAppContainer>
-          <Box sx={styles.reactPlayerContainer}>
-            <Typography variant="h5">
-              "Colors & Words" at the 2023 Heartland Pagan Festival
-            </Typography>
-            <ReactPlayer
-              style={{
-                margin: "auto",
-                marginTop: "5px",
-                maxWidth: "90%",
-                maxHeight: aboveSmallScreen ? "370px" : "225px",
-              }}
-              url="https://www.youtube.com/watch?v=etFixhawgTM"
-            />
+          <Box sx={styles.homepageContentContainer}>
+            <PromotedEvent />
+            <Box sx={styles.reactPlayerContainer}>
+              <Typography variant="h5">
+                "Colors & Words" at the 2023 Heartland Pagan Festival
+              </Typography>
+              <ReactPlayer
+                style={{
+                  margin: "auto",
+                  marginTop: "5px",
+                  maxWidth: "90%",
+                  maxHeight: aboveSmallScreen ? "370px" : "225px",
+                }}
+                url="https://www.youtube.com/watch?v=etFixhawgTM"
+              />
+            </Box>
           </Box>
         </ResponsiveAppContainer>
       </Box>

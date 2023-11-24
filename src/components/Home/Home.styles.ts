@@ -21,7 +21,7 @@ export const imagePlaceholder = { height: image.maxHeight };
 export const slideshowContainer = {
   overflow: "hidden",
   height: "calc(100vh - 56px)",
-  marginBottom: "25px",
+  marginBottom: "15px",
 };
 
 // this modifies the aspect ratio a bit at wider screen widths, but seems to be the least evil of all approaches tried so far
@@ -74,4 +74,10 @@ export const reactPlayerContainer = {
   flexDirection: "column",
   textAlign: "center",
   gap: "13px",
+};
+
+export const homepageContentContainer = {
+  display: "flex",
+  flexDirection: "column",
+  gap: "20px",
 };

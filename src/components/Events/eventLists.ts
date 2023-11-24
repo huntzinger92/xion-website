@@ -1,12 +1,28 @@
 export interface IEvent {
-  address: string;
+  address?: string;
   date: Date;
   details?: string;
   ticketLink?: string;
   title: string;
 }
 
+// enter these in chronological order
 const eventList: IEvent[] = [
+  {
+    title: "Live on KKFI's Local Showcase",
+    date: new Date("December 14, 2023"),
+    details:
+      "Tune in to KKFI's Local Showcase on Thursday, December 14th at 8pm as Xion Sound Waves performs live on Kansas City radio!",
+  },
+  {
+    title: "Solstice Serenade",
+    date: new Date("December 13, 2023"),
+    address: "The Brick, 1727 McGee Street Kansas City, MO 64108",
+    ticketLink:
+      "https://www.eventbrite.com/e/solstice-serenade-with-xion-sound-waves-tickets-763057715167",
+    details:
+      "Eat, drink, and be merry with Xion Sound Waves as we celebrate the sounds of the season at The Brick, Wednesday, December 13th, 8pm. This intimate show will feature original, soul-stirring songs paired with uniquely-arranged holiday classics curated to uplift and capture the spirit of the solstice season.",
+  },
   {
     title: "Xion Sound Waves at Prospero's Books",
     date: new Date("November 5, 2023"),
@@ -51,10 +67,16 @@ const eventList: IEvent[] = [
 export const pastEvents: IEvent[] = [];
 export const futureEvents: IEvent[] = [];
 
+// past events from soonest to furthest in the past
 eventList.forEach((event) => {
   if (event.date.getTime() < Date.now()) {
     pastEvents.push(event);
-  } else {
+  }
+});
+
+// future events from soonest to present to furthest in the future
+eventList.reverse().forEach((event) => {
+  if (event.date.getTime() >= Date.now()) {
     futureEvents.push(event);
   }
 });

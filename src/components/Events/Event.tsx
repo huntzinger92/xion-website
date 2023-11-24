@@ -32,9 +32,11 @@ export const Event = ({
           day: "numeric",
         })}
       </Typography>
-      <Link variant="h6" href={locationQueryLink} target="_blank">
-        {address}
-      </Link>
+      {address && (
+        <Link variant="h6" href={locationQueryLink} target="_blank">
+          {address}
+        </Link>
+      )}
       {details && <Typography variant="h6">{details}</Typography>}
       {shouldShowTicketLink && (
         <Button sx={styles.getTicketsButton} href={ticketLink} target="_blank">
