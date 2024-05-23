@@ -13,6 +13,7 @@ import * as styles from "./Events.styles";
 import { headerColor } from "../../constants/globalStyles";
 
 export const Events = () => {
+  console.log({ futureEvents });
   return (
     <Fade in timeout={defaultPageFadeInTime}>
       <Box sx={styles.eventsPageContainer}>

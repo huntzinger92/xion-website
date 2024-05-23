@@ -6,8 +6,16 @@ export interface IEvent {
   title: string;
 }
 
-// enter these in chronological order
+// enter these in reverse chronological order
 const eventList: IEvent[] = [
+  {
+    title: "Liberated Grounds Freedom Fest",
+    date: new Date("May 24, 2024"),
+    details:
+      "Join Xion Sound Waves for a liberating set of concerts and conversations at Freedom Fest in Kansas City, organized by Liberated Grounds.",
+    ticketLink:
+      "https://www.liberatedgrounds.com/event-details-registration/lg-freedom-fest-2024-connection-camping",
+  },
   {
     title: "Live on KKFI's Local Showcase",
     date: new Date("December 14, 2023"),
