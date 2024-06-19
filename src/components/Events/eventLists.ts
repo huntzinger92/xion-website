@@ -9,6 +9,14 @@ export interface IEvent {
 // enter these in reverse chronological order
 const eventList: IEvent[] = [
   {
+    title:
+      "KC Urban Farm Co-Op Summer Solstice & Power to the People Celebration",
+    date: new Date("June 22, 2024 12:00:00"),
+    details:
+      "Xion Sound Waves sings at the KCUFC Summer Solstice fundraising celebration, alongside Kansas City Rumba and Nicolette Paige. Come experience the music, exotic petting zoo, free produce giveaway, authentic Jamaican cuisine, and more!",
+    address: "5051 E Gregory Blvd, Kansas City, MO",
+  },
+  {
     title: "Liberated Grounds Freedom Fest",
     date: new Date("May 24, 2024"),
     details:
