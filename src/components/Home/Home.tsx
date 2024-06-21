@@ -31,7 +31,7 @@ export const Home = () => {
                   maxWidth: "90%",
                   maxHeight: aboveSmallScreen ? "370px" : "225px",
                 }}
-                url="https://www.youtube.com/watch?v=etFixhawgTM"
+                url="https://www.youtube.com/watch?v=by3cjkGODrk"
               />
             </Box>
           </Box>

@@ -9,6 +9,13 @@ export interface IEvent {
 // enter these in reverse chronological order
 const eventList: IEvent[] = [
   {
+    title: "Temples of Pansophia Festival 2024",
+    date: new Date("July 19, 2024 20:00:00"),
+    details:
+      "On July 19th, Xion Sound Waves will host the featured temple, with a featured concert the following evening, at the Temples of Pansophia Festival, a magical and immersive celebration that brings a sense of adventure and exploration to a land of temples, rich in ceremony, ritual, and more! The festival takes place from July 18th - July 22nd.",
+    ticketLink: "https://www.templesofpansophia.org",
+  },
+  {
     title:
       "KC Urban Farm Co-Op Summer Solstice & Power to the People Celebration",
     date: new Date("June 22, 2024 12:00:00"),

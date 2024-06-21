@@ -152,6 +152,7 @@ export const bigNavBarButtonTextWrapper = {
   textDecorationColor: "transparent",
   transition: "all .4s ease-in",
   ":hover": { textDecorationColor: contrastingTextColor },
+  fontSize: "1.18rem",
 };
 
 export const hamburgerMenu = { justifySelf: "start" };
