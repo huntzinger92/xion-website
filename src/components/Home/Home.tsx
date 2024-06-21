@@ -22,7 +22,7 @@ export const Home = () => {
             <PromotedEvent />
             <Box sx={styles.reactPlayerContainer}>
               <Typography variant="h5">
-                "Colors & Words" at the 2023 Heartland Pagan Festival
+                Propsero's Bell Tower Performance (2024)
               </Typography>
               <ReactPlayer
                 style={{
