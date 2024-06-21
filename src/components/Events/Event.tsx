@@ -21,7 +21,7 @@ export const Event = ({
   const shouldShowTicketLink = isFutureEvent && ticketLink;
   return (
     <Box>
-      <Typography variant="h6" sx={styles.eventTitle}>
+      <Typography variant="h5" sx={styles.eventTitle}>
         {title}
       </Typography>
       <Typography variant="h6">
@@ -37,7 +37,11 @@ export const Event = ({
           {address}
         </Link>
       )}
-      {details && <Typography variant="h6">{details}</Typography>}
+      {details && (
+        <Typography marginTop="5px" fontSize="1.05rem">
+          {details}
+        </Typography>
+      )}
       {shouldShowTicketLink && (
         <Button sx={styles.getTicketsButton} href={ticketLink} target="_blank">
           Get Tickets
