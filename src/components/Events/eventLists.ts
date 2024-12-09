@@ -9,7 +9,7 @@ export interface IEvent {
 // enter these in reverse chronological order
 const eventList: IEvent[] = [
   {
-    title: "Resounding Joy with Uzazi Village",
+    title: "Resounding Joy With Uzazi Village",
     date: new Date("December 15, 2024 20:00:00"),
     details:
       "Join us on December 15th from 5-7 PM as Xion and special guest King Dari bring powerful live performances in a unique musical experience designed to connect and inspire. The concert is organized in collaboration with Uzazi Village, an organization dedicated to empowering communities through holistic family care. Bring a donation of diapers or wipes to help support Uzazi Village's mission!",
