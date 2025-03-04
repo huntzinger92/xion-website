@@ -9,6 +9,14 @@ export interface IEvent {
 // enter these in reverse chronological order
 const eventList: IEvent[] = [
   {
+    title: "Xion Sound Waves Album Release Ceremony",
+    date: new Date("March 30, 2025 15:00:00"),
+    details:
+      "Experience the power of our DEBUT ALBUM at this intimate ceremony, including sound healing, guided meditation, cacao, breathwork, and more!",
+    ticketLink: "https://www.eventbrite.com/e/xion-soundwaves-album-release-ceremony-tickets-1254524429339?aff=ebdsoporgprofile",
+    address: "1750 Belleview Ave Second Floor, Kansas City, MO 64108"
+  },
+  {
     title: "Resounding Joy With Uzazi Village",
     date: new Date("December 15, 2024 20:00:00"),
     details:
