@@ -10,6 +10,7 @@ import { socialMediaLinks } from "../../constants/socialMediaLinks";
 import { SocialIcon } from "react-social-icons";
 import { ImageLoader } from "../ImageLoader/ImageLoader";
 import xionLogo from "./xionLogo.png";
+import posthog from "posthog-js";
 
 export const Footer = () => {
   const navigate = useNavigate();
@@ -34,25 +35,49 @@ export const Footer = () => {
           <Box sx={styles.linksContainer}>
             <Typography
               sx={styles.footerLinks}
-              onClick={() => handleNavItemClick(ROUTES.ABOUT)}
+              onClick={() => {
+                posthog.capture("nav_item_clicked", {
+                  label: "About Us",
+                  location: "footer",
+                });
+                handleNavItemClick(ROUTES.ABOUT);
+              }}
             >
               About Us
             </Typography>
             <Typography
               sx={styles.footerLinks}
-              onClick={() => handleNavItemClick(ROUTES.EVENTS_AND_CONCERTS)}
+              onClick={() => {
+                posthog.capture("nav_item_clicked", {
+                  label: "Event Calendar",
+                  location: "footer",
+                });
+                handleNavItemClick(ROUTES.EVENTS_AND_CONCERTS);
+              }}
             >
               Event Calendar
             </Typography>
             <Typography
               sx={styles.footerLinks}
-              onClick={() => handleNavItemClick(ROUTES.EXPERIENCE)}
+              onClick={() => {
+                posthog.capture("nav_item_clicked", {
+                  label: "Experience Us",
+                  location: "footer",
+                });
+                handleNavItemClick(ROUTES.EXPERIENCE);
+              }}
             >
               Experience Us
             </Typography>
             <Typography
               sx={styles.footerLinks}
-              onClick={() => handleNavItemClick(ROUTES.CONTACT)}
+              onClick={() => {
+                posthog.capture("nav_item_clicked", {
+                  label: "Contact",
+                  location: "footer",
+                });
+                handleNavItemClick(ROUTES.CONTACT);
+              }}
             >
               Contact
             </Typography>
@@ -66,14 +91,29 @@ export const Footer = () => {
             <SocialIcon
               {...styles.socialIconsProps}
               url={socialMediaLinks.instagram}
+              onClick={() =>
+                posthog.capture("social_media_link_clicked", {
+                  platform: "instagram",
+                })
+              }
             />
             <SocialIcon
               {...styles.socialIconsProps}
               url={socialMediaLinks.facebook}
+              onClick={() =>
+                posthog.capture("social_media_link_clicked", {
+                  platform: "facebook",
+                })
+              }
             />
             <SocialIcon
               {...styles.socialIconsProps}
               url={socialMediaLinks.youtube}
+              onClick={() =>
+                posthog.capture("social_media_link_clicked", {
+                  platform: "youtube",
+                })
+              }
             />
           </Box>
         </Box>

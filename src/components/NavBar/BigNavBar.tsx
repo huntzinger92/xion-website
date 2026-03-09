@@ -6,7 +6,7 @@ import { SocialIcon } from "react-social-icons";
 import { socialMediaLinks } from "../../constants/socialMediaLinks";
 
 export interface IBigNavBarProps {
-  handleNavItemClick: (pathname: string) => void;
+  handleNavItemClick: (pathname: string, label?: string) => void;
   pages: { navText: string | JSX.Element; route: string }[];
 }
 
@@ -16,7 +16,12 @@ export const BigNavBar = ({ handleNavItemClick, pages }: IBigNavBarProps) => {
       {pages.map(({ navText, route }) => (
         <Button
           key={route}
-          onClick={() => handleNavItemClick(route)}
+          onClick={() =>
+            handleNavItemClick(
+              route,
+              typeof navText === "string" ? navText : undefined,
+            )
+          }
           sx={styles.mediumAppBarButtons}
           variant="contained"
         >

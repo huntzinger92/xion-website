@@ -10,6 +10,7 @@ import savorTheSoundVJ from "./savorTheSoundVJ.jpg";
 import { defaultPageFadeInTime } from "../../constants/fadeTimes";
 import { useLocation } from "react-router-dom";
 import { PageHeader } from "../PageHeader/PageHeader";
+import posthog from "posthog-js";
 
 export const Contact = () => {
   const { state } = useLocation();
@@ -37,7 +38,15 @@ export const Contact = () => {
         <ResponsiveAppContainer>
           <Box>
             <PageHeader text="Contact Us" />
-            <form name="contact" method="post">
+            <form
+              name="contact"
+              method="post"
+              onSubmit={() => {
+                posthog.capture("contact_form_submitted", {
+                  subject: title,
+                });
+              }}
+            >
               <input type="hidden" name="form-name" value="contact" />
               <Box sx={styles.formContainer}>
                 <TextField

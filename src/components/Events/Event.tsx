@@ -4,6 +4,7 @@ import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import { IEvent } from "./eventLists";
 import * as styles from "./Events.styles";
+import posthog from "posthog-js";
 
 export interface IEventProps extends IEvent {
   isFutureEvent?: boolean;
@@ -33,7 +34,17 @@ export const Event = ({
         })}
       </Typography>
       {address && (
-        <Link variant="h6" href={locationQueryLink} target="_blank">
+        <Link
+          variant="h6"
+          href={locationQueryLink}
+          target="_blank"
+          onClick={() =>
+            posthog.capture("event_address_clicked", {
+              event_title: title,
+              address,
+            })
+          }
+        >
           {address}
         </Link>
       )}
@@ -43,7 +54,17 @@ export const Event = ({
         </Typography>
       )}
       {shouldShowTicketLink && (
-        <Button sx={styles.getTicketsButton} href={ticketLink} target="_blank">
+        <Button
+          sx={styles.getTicketsButton}
+          href={ticketLink}
+          target="_blank"
+          onClick={() =>
+            posthog.capture("get_tickets_clicked", {
+              event_title: title,
+              ticket_link: ticketLink,
+            })
+          }
+        >
           Get Tickets
         </Button>
       )}

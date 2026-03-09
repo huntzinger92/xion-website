@@ -14,11 +14,17 @@ import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
 import * as styles from "./Experience.styles";
 import { PageHeader } from "../PageHeader/PageHeader";
+import { useEffect } from "react";
+import posthog from "posthog-js";
 
 export const Experience = () => {
   const navigate = useNavigate();
   const theme = useTheme();
   const aboveSmallScreen = useMediaQuery(theme.breakpoints.up("sm"));
+
+  useEffect(() => {
+    posthog.capture("experience_page_viewed");
+  }, []);
 
   const handleInquiryReroute = ({
     title,
@@ -75,13 +81,14 @@ export const Experience = () => {
                   </li>
                 </ul>
                 <Button
-                  onClick={() =>
+                  onClick={() => {
+                    posthog.capture("ceremonial_inquiry_clicked");
                     handleInquiryReroute({
                       title: "Having Xion Perform at My Ceremony",
                       message:
                         "I'm reaching out to inquire about booking Xion to hold ceremonial space...",
-                    })
-                  }
+                    });
+                  }}
                   sx={styles.buttonStyle}
                 >
                   Ceremonial Inquiries
@@ -110,13 +117,14 @@ export const Experience = () => {
                   reconnect listeners to the divinity within each of us.
                 </Typography>
                 <Button
-                  onClick={() =>
+                  onClick={() => {
+                    posthog.capture("concert_booking_inquiry_clicked");
                     handleInquiryReroute({
                       title: "Booking a Xion Sound Waves Concert",
                       message:
                         "I'm reaching out to inquire about hiring Xion for a musical performance...",
-                    })
-                  }
+                    });
+                  }}
                   sx={styles.buttonStyle}
                 >
                   Concert Booking

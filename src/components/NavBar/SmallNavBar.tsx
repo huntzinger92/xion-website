@@ -12,7 +12,7 @@ import * as styles from "./NavBar.styles";
 import { socialMediaLinks } from "../../constants/socialMediaLinks";
 
 export interface ISmallNavBarProps {
-  handleNavItemClick: (pathname: string) => void;
+  handleNavItemClick: (pathname: string, label?: string) => void;
   pages: { navText: string; route: string }[];
 }
 
@@ -30,9 +30,9 @@ export const SmallNavBar = ({
     setAnchorElNav(null);
   };
 
-  const onNavItemClick = (route: string) => {
+  const onNavItemClick = (route: string, label?: string) => {
     handleCloseNavMenu();
-    handleNavItemClick(route);
+    handleNavItemClick(route, label);
   };
 
   return (
@@ -67,7 +67,7 @@ export const SmallNavBar = ({
         {pages.map(({ navText, route }) => (
           <MenuItem
             key={navText}
-            onClick={() => onNavItemClick(route)}
+            onClick={() => onNavItemClick(route, navText)}
             sx={styles.navButtonContainer}
           >
             <Typography sx={styles.navButtonText}>{navText}</Typography>
