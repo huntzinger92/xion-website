@@ -4,6 +4,9 @@
   functions = "netlify/functions"
   publish = "dist"
 
+  [build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "VITE_PUBLIC_POSTHOG_HOST,VITE_PUBLIC_POSTHOG_KEY"
+
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
   #[[redirects]]
