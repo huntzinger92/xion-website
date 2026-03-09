@@ -5,11 +5,15 @@ import { ROUTES } from "../../constants/routes";
 import { useNavigate } from "react-router";
 import { BigNavBar } from "./BigNavBar";
 import { SmallNavBar } from "./SmallNavBar";
+import posthog from "posthog-js";
 
 export const NavBar = () => {
   const navigate = useNavigate();
 
-  const handleNavItemClick = (pathname: string) => {
+  const handleNavItemClick = (pathname: string, label?: string) => {
+    if (label) {
+      posthog.capture("nav_item_clicked", { label, location: "navbar" });
+    }
     navigate({ pathname });
   };
 

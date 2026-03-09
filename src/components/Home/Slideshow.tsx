@@ -10,6 +10,7 @@ import * as styles from "./Home.styles";
 import { ImageLoader } from "../ImageLoader/ImageLoader";
 import "./Slideshow.css";
 import { useMediaQuery, useTheme } from "@mui/material";
+import posthog from "posthog-js";
 
 export const Slideshow = () => {
   const theme = useTheme();
@@ -33,6 +34,11 @@ export const Slideshow = () => {
             />
             {homepageImage === xionSilhouette && (
               <Typography
+                onClick={() =>
+                  posthog.capture("photo_credit_clicked", {
+                    photographer: "@_big_fern_",
+                  })
+                }
                 sx={{
                   position: "absolute",
                   top: "5px",

@@ -11,9 +11,16 @@ import { socialMediaLinks } from "../../constants/socialMediaLinks";
 import { futureEvents, pastEvents } from "./eventLists";
 import * as styles from "./Events.styles";
 import { headerColor } from "../../constants/globalStyles";
+import { useEffect } from "react";
+import posthog from "posthog-js";
 
 export const Events = () => {
-  console.log({ futureEvents });
+  useEffect(() => {
+    posthog.capture("events_page_viewed", {
+      future_event_count: futureEvents.length,
+      past_event_count: pastEvents.length,
+    });
+  }, []);
   return (
     <Fade in timeout={defaultPageFadeInTime}>
       <Box sx={styles.eventsPageContainer}>

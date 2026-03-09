@@ -6,9 +6,15 @@ import { ROUTES } from "../../constants/routes";
 import { ResponsiveAppContainer } from "../ResponsiveAppContainer/ResponsiveAppContainer";
 import { defaultPageFadeInTime } from "../../constants/fadeTimes";
 import * as styles from "./NotFound.styles";
+import { useEffect } from "react";
+import posthog from "posthog-js";
 
 export const NotFound = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    posthog.capture("not_found_page_viewed");
+  }, []);
 
   const handleNavItemClick = (pathname: string) => {
     navigate({ pathname });
@@ -24,7 +30,10 @@ export const NotFound = () => {
               were looking for.
             </Typography>
             <Typography
-              onClick={() => handleNavItemClick(ROUTES.HOME)}
+              onClick={() => {
+                posthog.capture("not_found_homepage_link_clicked");
+                handleNavItemClick(ROUTES.HOME);
+              }}
               sx={styles.homepageLinkText}
             >
               Take me to the Homepage

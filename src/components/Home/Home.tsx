@@ -8,6 +8,7 @@ import { defaultPageFadeInTime } from "../../constants/fadeTimes";
 import ReactPlayer from "react-player";
 import * as styles from "./Home.styles";
 import { PromotedEvent } from "./PromotedEvent";
+import posthog from "posthog-js";
 
 export const Home = () => {
   const theme = useTheme();
@@ -32,6 +33,11 @@ export const Home = () => {
                   maxHeight: aboveSmallScreen ? "370px" : "225px",
                 }}
                 url="https://www.youtube.com/watch?v=by3cjkGODrk"
+                onPlay={() =>
+                  posthog.capture("homepage_video_played", {
+                    video_title: "Propsero's Bell Tower Performance (2024)",
+                  })
+                }
               />
             </Box>
           </Box>
